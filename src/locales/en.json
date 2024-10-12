@@ -1,0 +1,123 @@
+{
+  "common": {
+    "download": "Download",
+    "start": "Start",
+    "letsDoIt": "Let's do it !",
+    "periods_two": "{{first}} and {{second}}",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "clear": "Clear",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "sign": "Sign",
+    "french": "French",
+    "dutch": "Dutch",
+    "english": "English"
+  },
+  "header": {
+    "links": {
+      "settings": "Settings",
+      "faq": "FAQ",
+      "logout": "Logout"
+    }
+  },
+  "landing": {
+    "hero": "Submit your TST declaration\nin minutes."
+  },
+  "dashboard": {
+    "title": "My declarations.",
+    "monthPicker": {
+      "tooltips": {
+        "manuallySubmitted": "This declaration has been manually submitted",
+        "timeToSubmit": "This declaration could now be submitted",
+        "lastCallToSubmit": "This declaration should be submitted now"
+      },
+      "submitted": {
+        "title": "Submitted declaration",
+        "emailSent": "Email sent"
+      }
+    },
+    "footer": {
+      "tagManualDeclarationButtonLabel": "Mark as manually submitted",
+      "createDeclarationButtonLabel": "Create declaration"
+    }
+  },
+  "auth": {
+    "pendingLabel": "Authenticating..."
+  },
+  "settings": {
+    "title": "Settings.",
+    "save": {
+      "success": {
+        "title": "Success",
+        "description": "Settings successfully saved."
+      }
+    },
+    "form": {
+      "labels": {
+        "firstName": "Firstname",
+        "lastName": "Lastname",
+        "street": "Street",
+        "number": "Number",
+        "postalCode": "Postal Code",
+        "locality": "Locality",
+        "niss": "NISS",
+        "language": "Language"
+      }
+    }
+  },
+  "declaration": {
+    "send": {
+      "title": "Send to administration.",
+      "email": {
+        "recipientLabel": "Recipient : ",
+        "subjectLabel": "Object :"
+      },
+      "footer": {
+        "submitButtonLabel": "Save and submit",
+        "submitWarning": {
+          "title": "Warning",
+          "description": "An email will be sent to the administration using your Gmail account. After submitting the declaration, please check your Gmail outbox to confirm it was successfully sent. If it wasn’t, please submit the declaration manually."
+        },
+        "sendButtonLabel": "Send"
+      }
+    },
+    "sign": {
+      "title": "Check your declaration.",
+      "modal": {
+        "title": "Sign your declaration here.",
+        "signButtonLabel": "Sign"
+      },
+      "pay": {
+        "buttonLabel": "Pay",
+        "warning": {
+          "title": "Please review",
+          "description": "Please review all information carefully before proceeding. Toby cannot be held responsible for any errors in your declaration."
+        }
+      }
+    },
+    "pay": {
+      "title": "Pay your TST.",
+      "qrcodePayload": "BCD\n001\n1\nSCT\nPCHQBEBB\nCentre de perception - Taxes diverses\nBE39679200229319\nEUR{{amount}}\n\nTOB/{{niss}} - {{name}} - {{period}}",
+      "qrcodeHint": "Scan this QR Code with your banking application."
+    },
+    "submit": {
+      "email": {
+        "message": "Dear Sir/Madam,\n\nPlease find attached the TST declaration for {{period}}.\n\nKind regards,\n\n{{name}}",
+        "subject": "TST declaration for {{period}}",
+        "filename": "{{lastname}}_{{firstname}}_TOB_{{period}}.pdf"
+      }
+    },
+    "create": {
+      "title": "Fill in your declaration.",
+      "stock": "Stock",
+      "type": "Type",
+      "rate": "Rate",
+      "taxBasis": "Tax basis (EUR)",
+      "taxAmount": "Tax amount (EUR)",
+      "payment": "Payment",
+      "reimbursement": "Reimbursement"
+    }
+  }
+}
