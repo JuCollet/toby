@@ -1,7 +1,8 @@
 import { DeclarationRow } from "@/pages/app/declaration/Declaration";
-import { PDFDocument, PDFPage, rgb, StandardFonts } from "pdf-lib";
-import { UserSettings } from "../query/useUserConfig";
 import { getRoundedFloat } from "@/utils/number";
+import { PDFDocument, PDFPage, rgb, StandardFonts } from "pdf-lib";
+
+import { UserSettings } from "../query/useUserConfig";
 
 type Article = "1201" | "1203";
 type Rate = "012" | "035" | "132";
@@ -119,10 +120,10 @@ const getTaxData = ({
   const payments = declarationRows.filter(({ amount }) => amount >= 0);
   const paymentsTotalAmount = payments.reduce(
     (acc, curr) => acc + curr.amount,
-    0
+    0,
   );
 
-  let paymentsKey: Row =
+  const paymentsKey: Row =
     paymentsTotalAmount > PAYMENTS_LIMIT_AMOUNT ? "ctwul" : "ctwoul";
 
   taxData[paymentsKey] = {
@@ -191,7 +192,7 @@ export const generatePdf = async ({
 }) => {
   const baseFilePath = `${window.location.origin}/toby/tob_form.pdf`;
   const existingPdfBytes = await fetch(baseFilePath).then((res) =>
-    res.arrayBuffer()
+    res.arrayBuffer(),
   );
 
   const data: Data = {
@@ -534,7 +535,7 @@ export const generatePdf = async ({
         size: size ?? 11,
         font: helveticaFont,
         color: rgb(0, 0, 0),
-      })
+      }),
     );
 
   if (b64signature) {

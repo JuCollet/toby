@@ -1,6 +1,7 @@
 import { useCallback, useContext } from "react";
-import { AuthContext } from "../../context/AuthProvider";
 import { useQuery } from "react-query";
+
+import { AuthContext } from "../../context/AuthProvider";
 
 type GoogleDriveFile = {
   id: string;
@@ -26,7 +27,7 @@ export const useGoogleDriveAppFiles = () => {
     });
 
     return (await res.json()) as { files: GoogleDriveFile[] };
-  }, []);
+  }, [token]);
 
   return useQuery({
     queryFn: getGoogleDriveFiles,

@@ -1,7 +1,8 @@
 import { QueryClient, QueryClientProvider } from "react-query";
+
 import { AuthBoundary } from "./AuthBoundary";
-import { AuthProvider } from "./context/AuthProvider";
 import { Toaster } from "./components/ui/toaster";
+import { AuthProvider } from "./context/AuthProvider";
 
 const queryClient = new QueryClient({
   defaultOptions: {

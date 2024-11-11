@@ -1,9 +1,10 @@
-import { LoaderCircle } from "lucide-react";
-import { useGoogleDriveAppFiles } from "../../services/query/useGoogleDriveAppFiles";
-import { Navigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import { useUserConfig } from "@/services/query/useUserConfig";
+import { LoaderCircle } from "lucide-react";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { Navigate } from "react-router-dom";
+
+import { useGoogleDriveAppFiles } from "../../services/query/useGoogleDriveAppFiles";
 
 export const Auth = () => {
   const {
@@ -17,7 +18,7 @@ export const Auth = () => {
     if (userConfig?.language && userConfig?.language != language) {
       changeLanguage(userConfig.language);
     }
-  }, [userConfig]);
+  }, [userConfig, language, changeLanguage]);
 
   if (isLoading) {
     return (

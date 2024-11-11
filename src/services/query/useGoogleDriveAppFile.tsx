@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useQuery } from "react-query";
+
 import { AuthContext } from "../../context/AuthProvider";
 
 const getGoogleDriveFile = async ({
@@ -15,7 +16,7 @@ const getGoogleDriveFile = async ({
       headers: {
         authorization: `Bearer ${accessToken}`,
       },
-    }
+    },
   );
   return await res.json();
 };

@@ -1,10 +1,3 @@
-import { useContext, useEffect, useState } from "react";
-import { DeclarationContext } from "./Declaration";
-import { generatePdf } from "@/services/pdf/generatePDF";
-import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
-import { DeclarationSignDialog } from "./components/DeclarationSignDialog";
-import { useUserConfig } from "@/services/query/useUserConfig";
 import { Page } from "@/components/Page";
 import {
   AlertDialog,
@@ -17,7 +10,15 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
+import { generatePdf } from "@/services/pdf/generatePDF";
+import { useUserConfig } from "@/services/query/useUserConfig";
+import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+
+import { DeclarationSignDialog } from "./components/DeclarationSignDialog";
+import { DeclarationContext } from "./Declaration";
 
 export const DeclarationSign = () => {
   const [isSignOpen, setIsSignOpen] = useState(false);
@@ -41,7 +42,7 @@ export const DeclarationSign = () => {
         }
       })();
     }
-  }, [userSettings, b64Signature, setDocument]);
+  }, [userSettings, b64Signature, declarationRows, periods, setDocument]);
 
   return (
     <Page

@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Table,
   TableBody,
@@ -6,14 +8,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
 import { Trash2 } from "lucide-react";
 import { useContext } from "react";
-import { DeclarationContext } from "../Declaration";
-import { Card, CardContent } from "@/components/ui/card";
-
-import { DeclarationCreateTableFormRow } from "./DeclarationCreateTableFormRow";
 import { useTranslation } from "react-i18next";
+
+import { DeclarationContext } from "../Declaration";
+import { DeclarationCreateTableFormRow } from "./DeclarationCreateTableFormRow";
 
 export const DeclarationCreateTable = () => {
   const { t } = useTranslation();
@@ -22,7 +22,7 @@ export const DeclarationCreateTable = () => {
 
   const total =
     Math.round(
-      declarationRows.reduce((acc, curr) => acc + curr.amount, 0) * 100
+      declarationRows.reduce((acc, curr) => acc + curr.amount, 0) * 100,
     ) / 100;
 
   return (

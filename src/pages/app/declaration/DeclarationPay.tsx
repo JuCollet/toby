@@ -1,12 +1,13 @@
 import { Page } from "@/components/Page";
 import { Button } from "@/components/ui/button";
+import { useUserConfig } from "@/services/query/useUserConfig";
+import { getJoinedPeriod } from "@/utils/date";
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import QRCode from "react-qr-code";
 import { useNavigate } from "react-router-dom";
-import { DeclarationRow, DeclarationContext } from "./Declaration";
-import { useUserConfig } from "@/services/query/useUserConfig";
-import { useTranslation } from "react-i18next";
-import { getJoinedPeriod } from "@/utils/date";
+
+import { DeclarationContext, DeclarationRow } from "./Declaration";
 
 const getTotalAmount = ({
   declarationRows,

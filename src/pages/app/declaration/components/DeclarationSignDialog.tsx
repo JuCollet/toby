@@ -2,14 +2,15 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogTitle,
   DialogFooter,
   DialogHeader,
+  DialogTitle,
 } from "@/components/ui/dialog";
 import { useContext, useRef } from "react";
-import { ReactSketchCanvas, ReactSketchCanvasRef } from "react-sketch-canvas";
-import { DeclarationContext } from "../Declaration";
 import { useTranslation } from "react-i18next";
+import { ReactSketchCanvas, ReactSketchCanvasRef } from "react-sketch-canvas";
+
+import { DeclarationContext } from "../Declaration";
 
 type Props = {
   open: boolean;

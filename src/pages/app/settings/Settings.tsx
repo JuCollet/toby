@@ -1,11 +1,12 @@
 import { Page } from "@/components/Page";
-import { SettingsForm } from "./components/SettingsForm";
-import { useUserConfig } from "@/services/query/useUserConfig";
 import { Button } from "@/components/ui/button";
-import { useLocation, useNavigate } from "react-router-dom";
 import { useStoreGoogleDriveAppFile } from "@/services/query/useStoreGoogleDriveAppFile";
+import { useUserConfig } from "@/services/query/useUserConfig";
 import { Loader2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useLocation, useNavigate } from "react-router-dom";
+
+import { SettingsForm } from "./components/SettingsForm";
 
 export const Settings = () => {
   const {

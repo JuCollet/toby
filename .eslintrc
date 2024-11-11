@@ -1,0 +1,248 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:jest/recommended"
+  ],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "import",
+    "jest",
+    "simple-import-sort",
+    "typescript-sort-keys",
+    "unused-imports"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "env": {
+    "jest": true
+  },
+  "rules": {
+    "typescript-sort-keys/interface": "off",
+    "typescript-sort-keys/string-enum": "error",
+    // #region: Core rules
+    "arrow-body-style": ["error", "as-needed"],
+    "no-implicit-coercion": "error",
+    "object-shorthand": ["error", "always"],
+    "prefer-template": "error",
+    "no-async-promise-executor": "error",
+    "no-console": "error",
+    "no-control-regex": "error",
+    "no-else-return": "error",
+    "no-multiple-empty-lines": ["error", { "max": 1 }],
+    "no-nested-ternary": "error",
+    "no-param-reassign": "error",
+    "no-return-await": "error",
+    "no-self-compare": "error",
+    "no-shadow": "off",
+    "no-throw-literal": "error",
+    "no-useless-computed-key": "error",
+    "no-useless-escape": "error",
+    "no-useless-return": "error",
+    "prefer-destructuring": [
+      "error",
+      {
+        "object": true,
+        "array": true
+      }
+    ],
+    "require-await": "off", //you must disable the base rule as it can report incorrect errors
+    "no-plusplus": "error",
+    // #endregion
+    // #region: @typescript-eslint
+    "@typescript-eslint/array-type": ["error", { "default": "array-simple" }],
+    "@typescript-eslint/await-thenable": "error",
+    "@typescript-eslint/ban-ts-comment": ["error", { "ts-nocheck": false }],
+    "@typescript-eslint/comma-spacing": ["error"],
+    "@typescript-eslint/consistent-indexed-object-style": "error",
+    "@typescript-eslint/consistent-type-definitions": "error",
+    "@typescript-eslint/consistent-type-imports": "error",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/member-delimiter-style": "error",
+    "@typescript-eslint/method-signature-style": "error",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      { "selector": "enum", "format": ["PascalCase", "UPPER_CASE"] },
+      { "selector": "enumMember", "format": ["PascalCase", "UPPER_CASE"] },
+      {
+        "selector": "typeLike",
+        "format": ["PascalCase"],
+        "custom": { "regex": "^T[A-Z]", "match": false }
+      },
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": { "regex": "^T[A-Z]", "match": false }
+      }
+    ],
+    "@typescript-eslint/no-dynamic-delete": "error",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-empty-interface": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-extra-semi": "error",
+    "@typescript-eslint/no-invalid-void-type": "error",
+    "@typescript-eslint/no-require-imports": "error",
+    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/no-throw-literal": "error",
+    "@typescript-eslint/no-unnecessary-type-arguments": "error",
+    "@typescript-eslint/no-unused-vars": "off",
+		"unused-imports/no-unused-imports": "error",
+		"unused-imports/no-unused-vars": [
+			"error",
+			{
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+		],
+    "@typescript-eslint/no-non-null-assertion": "error",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-useless-constructor": "error",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/prefer-for-of": "error",
+    "@typescript-eslint/prefer-function-type": "error",
+    "@typescript-eslint/prefer-includes": "error",
+    "@typescript-eslint/prefer-optional-chain": "error",
+    "@typescript-eslint/prefer-readonly": "error",
+    "@typescript-eslint/prefer-reduce-type-parameter": "error",
+    "@typescript-eslint/prefer-string-starts-ends-with": "error",
+    "@typescript-eslint/prefer-ts-expect-error": "error",
+    "@typescript-eslint/require-array-sort-compare": "error",
+    "@typescript-eslint/require-await": "error",
+    "@typescript-eslint/sort-type-union-intersection-members": "error",
+    "@typescript-eslint/switch-exhaustiveness-check": "error",
+    "@typescript-eslint/type-annotation-spacing": "error",
+    // #endregion
+    "prettier/prettier": "off",
+    "react/display-name": "off",
+    "react/jsx-boolean-value": ["error", "never"],
+    "react/jsx-curly-brace-presence": ["error", "never"],
+    "react/jsx-fragments": ["error", "syntax"],
+    "react/jsx-no-useless-fragment": "error",
+    "react/no-array-index-key": "error",
+    "react/self-closing-comp": "error",
+    "react/sort-comp": "error",
+    "react/sort-default-props": "error",
+    "react/no-unstable-nested-components": [
+      "error",
+      { "allowAsProps": true }
+    ],
+    // #endregion
+    // #region: eslint-plugin-import
+    "import/no-duplicates": "error",
+    "import/no-unresolved": "error",
+    "import/prefer-default-export": "off",
+    "import/no-anonymous-default-export": [
+      "error",
+      {
+        "allowArray": true,
+        "allowArrowFunction": false,
+        "allowAnonymousClass": false,
+        "allowAnonymousFunction": false,
+        "allowCallExpression": true, // The true value here is for backward compatibility
+        "allowLiteral": true,
+        "allowObject": false
+      }
+    ],
+    "import/no-restricted-paths": [
+      "error",
+      {
+        "zones": [
+          { "target": "./src/core", "from": "./src/app" },
+          { "target": "./src/core", "from": "./src/common" },
+          { "target": "./src/common", "from": "./src/app" }
+        ]
+      }
+    ],
+    "simple-import-sort/imports": "error",
+    "sort-imports": "off", // simple-import-sort takes care of this
+    "import/order": "off" // simple-import-sort takes care of this
+    // #endregion
+  },
+  "overrides": [
+    {
+      "files": ["**/*.tsx"],
+      "rules": {
+        "react/prop-types": "off"
+      }
+    },
+    {
+      "files": ["**/*.d.ts"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": "off"
+      }
+    },
+    {
+      "files": ["src/app/screens/debug/**/*.tsx"],
+      "rules": {
+        "@typescript-eslint/no-non-null-assertion": "off"
+      }
+    },
+    {
+      "files": ["src/app/**/routes.ts", "src/app/**/routes/*.ts"],
+      "rules": {
+        "@typescript-eslint/consistent-type-definitions": "off"
+      }
+    },
+    {
+      "files": ["src/common/**/*", "src/core/**/*", "src/theme/**/*"],
+      "rules": {
+        "import/no-default-export": "error"
+      }
+    },
+    {
+      "files": ["**/*.ts", "**/*.tsx", "**/*.js"],
+      "parser": "@typescript-eslint/parser",
+      "rules": {
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              ["^\\u0000", "^react", "^@?\\w"], // Packages. `react` related packages come first.
+              ["^(@xtra-.*)(/.*|$)"], // absolute imports
+              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"] // relative imports
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "settings": {
+    "import/core-modules": ["@xtra-test-utils"],
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "project": "./tsconfig.json"
+      },
+      "node": {
+        "extensions": [
+          ".js",
+          ".android.js",
+          ".ios.js",
+          ".android.tsx",
+          ".android.ts",
+          ".ios.tsx",
+          ".ios.ts",
+          ".ts",
+          ".tsx",
+          ".d.ts"
+        ]
+      }
+    },
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    }
+  }
+}

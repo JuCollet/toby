@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
-import { Page } from "../components/Page";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+
+import { Page } from "../components/Page";
 
 export const Landing = () => {
   const { t } = useTranslation();

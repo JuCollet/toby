@@ -1,8 +1,3 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { useToast } from "@/hooks/use-toast";
-
 import {
   Form,
   FormControl,
@@ -12,16 +7,20 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useMemo } from "react";
-import { useStoreGoogleDriveAppFile } from "@/services/query/useStoreGoogleDriveAppFile";
-import { useTranslation } from "react-i18next";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
 } from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
+import { useStoreGoogleDriveAppFile } from "@/services/query/useStoreGoogleDriveAppFile";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { SelectValue } from "@radix-ui/react-select";
+import { useMemo } from "react";
+import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
+import { z } from "zod";
 
 const formSchema = z.object({
   firstName: z.string(),
@@ -108,7 +107,7 @@ export const SettingsForm = ({
         placeholder: "80.01.01-213-10",
       },
     ],
-    []
+    [t],
   );
 
   return (

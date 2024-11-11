@@ -1,9 +1,10 @@
-import { useContext, useMemo } from "react";
-import { useMutation } from "react-query";
-import { AuthContext } from "../../context/AuthProvider";
-import { useTranslation } from "react-i18next";
-import { UserSettings } from "./useUserConfig";
 import { getMonthName } from "@/utils/date";
+import { useContext, useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import { useMutation } from "react-query";
+
+import { AuthContext } from "../../context/AuthProvider";
+import { UserSettings } from "./useUserConfig";
 
 const BOUNDARY = "boundary";
 
@@ -70,7 +71,7 @@ async function sendEmail({
         filename,
         recipient,
       }),
-    }
+    },
   );
   return response.json();
 }
@@ -92,25 +93,36 @@ export const useSendEmail = ({
       ? "CPIC.TAXDIV@minfin.fed.be"
       : "ju.collet@gmail.com";
 
-  const years = periods.map((period) => period.split("/")[0]);
-  const months = periods.map((period) =>
-    getMonthName({
-      monthIndex: parseInt(period.split("/")[1]) - 1,
-      locale: language,
-    })
+  const years = useMemo(
+    () => periods.map((period) => period.split("/")[0]),
+    [periods],
   );
-  const monthsShort = periods
-    .map((period) =>
-      getMonthName({
-        monthIndex: parseInt(period.split("/")[1]) - 1,
-        locale: language,
-        format: "short",
-      })
-    )
-    .map((month) => month.normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
+  const months = useMemo(
+    () =>
+      periods.map((period) =>
+        getMonthName({
+          monthIndex: parseInt(period.split("/")[1]) - 1,
+          locale: language,
+        }),
+      ),
+    [periods, language],
+  );
+  const monthsShort = useMemo(
+    () =>
+      periods
+        .map((period) =>
+          getMonthName({
+            monthIndex: parseInt(period.split("/")[1]) - 1,
+            locale: language,
+            format: "short",
+          }),
+        )
+        .map((month) => month.normalize("NFD").replace(/[\u0300-\u036f]/g, "")),
+    [periods, language],
+  );
 
   const isSameYear = periods.every(
-    (period) => period.split("/")[0] === years[0]
+    (period) => period.split("/")[0] === years[0],
   );
 
   const period = useMemo(() => {
@@ -122,7 +134,7 @@ export const useSendEmail = ({
       first: `${months[0]}${isSameYear ? "" : ` ${years[0]}`}`,
       second: `${months[1]} ${years[1]}`,
     });
-  }, []);
+  }, [years, isSameYear, months, t]);
 
   const filenamePeriod = useMemo(() => {
     if (years.length === 1) {
@@ -130,7 +142,7 @@ export const useSendEmail = ({
     }
 
     return `${monthsShort[0]}-${years[0]}_${monthsShort[1]}-${years[1]}`;
-  }, []);
+  }, [monthsShort, years]);
 
   const message = t("declaration.submit.email.message", {
     period,

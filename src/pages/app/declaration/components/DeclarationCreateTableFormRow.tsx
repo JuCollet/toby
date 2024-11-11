@@ -1,13 +1,5 @@
-import { TableCell, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { Plus } from "lucide-react";
-import { useContext, useState } from "react";
-import {
-  DeclarationContext,
-  DeclarationRate,
-  DeclarationRow,
-} from "../Declaration";
-
+import { Input } from "@/components/ui/input";
 import {
   Select,
   SelectContent,
@@ -15,8 +7,16 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
+import { TableCell, TableRow } from "@/components/ui/table";
+import { Plus } from "lucide-react";
+import { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
+
+import {
+  DeclarationContext,
+  DeclarationRate,
+  DeclarationRow,
+} from "../Declaration";
 
 export const DeclarationCreateTableFormRow = () => {
   const { t } = useTranslation();

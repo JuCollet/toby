@@ -1,6 +1,7 @@
-import { Navigate, Outlet } from "react-router";
-import { AuthContext } from "./context/AuthProvider";
 import { useContext } from "react";
+import { Navigate, Outlet } from "react-router";
+
+import { AuthContext } from "./context/AuthProvider";
 
 export const AuthBoundary = () => {
   const { token, error } = useContext(AuthContext);

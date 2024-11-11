@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useMutation, useQueryClient } from "react-query";
+
 import { AuthContext } from "../../context/AuthProvider";
 
 async function uploadFileToDrive({
@@ -13,9 +14,8 @@ async function uploadFileToDrive({
   fileName: string;
   fileId?: string;
 }) {
-  var fileName = fileName;
-  var contentType = "text/plain";
-  var metadata = {
+  const contentType = "text/plain";
+  const metadata = {
     name: fileName,
     mimeType: contentType,
     ...(!fileId && { parents: ["appDataFolder"] }),
@@ -25,7 +25,7 @@ async function uploadFileToDrive({
   const delimiter = "\r\n--" + boundary + "\r\n";
   const close_delim = "\r\n--" + boundary + "--";
 
-  var multipartRequestBody =
+  const multipartRequestBody =
     delimiter +
     "Content-Type: application/json; charset=UTF-8\r\n\r\n" +
     JSON.stringify(metadata) +
@@ -48,7 +48,7 @@ async function uploadFileToDrive({
         "Content-Type": `multipart/related; boundary=${boundary}`,
       },
       body: multipartRequestBody,
-    }
+    },
   );
 
   return response.json();

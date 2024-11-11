@@ -1,10 +1,11 @@
+import { Page } from "@/components/Page";
 import { Button } from "@/components/ui/button";
 import { useContext } from "react";
-import { DeclarationContext } from "./Declaration";
-import { DeclarationCreateTable } from "./components/DeclarationCreateTable";
-import { useNavigate } from "react-router-dom";
-import { Page } from "@/components/Page";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+
+import { DeclarationCreateTable } from "./components/DeclarationCreateTable";
+import { DeclarationContext } from "./Declaration";
 
 export const DeclarationCreate = () => {
   const { t } = useTranslation();

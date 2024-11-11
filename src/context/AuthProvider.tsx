@@ -5,6 +5,7 @@ import {
   useEffect,
   useState,
 } from "react";
+
 import { getCodeChallenge, getCodeVerifier } from "../services/helpers";
 
 type AuthState = {
@@ -39,7 +40,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     }) => {
       const storedState = window.localStorage.getItem(STATE_STORAGE_KEY);
       const storedCodeVerifier = window.localStorage.getItem(
-        CODE_VERIFIER_STORAGE_KEY
+        CODE_VERIFIER_STORAGE_KEY,
       );
 
       window.localStorage.removeItem(STATE_STORAGE_KEY);
@@ -67,7 +68,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
 
       setState((p) => ({ ...p, token: data.access_token }));
     },
-    []
+    [],
   );
 
   const authenticate = useCallback(async () => {
@@ -84,13 +85,13 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     ].join(" ");
 
     const url = `https://accounts.google.com/o/oauth2/v2/auth?scope=${encodeURIComponent(
-      scope
+      scope,
     )}&response_type=code&state=${encodeURIComponent(
-      state
+      state,
     )}&redirect_uri=${encodeURIComponent(
-      REDIRECT_URI
+      REDIRECT_URI,
     )}&client_id=${encodeURIComponent(
-      CLIENT_ID
+      CLIENT_ID,
     )}&code_challenge=${codeChallenge}&code_challenge_method=S256`;
 
     window.location.replace(url);
@@ -106,7 +107,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     } else {
       authenticate();
     }
-  }, []);
+  }, [authenticate, getAccessToken]);
 
   return <AuthContext.Provider value={state}>{children}</AuthContext.Provider>;
 };

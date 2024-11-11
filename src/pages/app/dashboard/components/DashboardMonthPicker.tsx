@@ -10,19 +10,19 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { generatePdf } from "@/services/pdf/generatePDF";
+import { useUserConfig } from "@/services/query/useUserConfig";
 import {
   Declaration,
   isAppSubmission,
   UserData,
 } from "@/services/query/useUserData";
+import { getPeriod } from "@/utils/date";
 import clsx from "clsx";
+import { saveAs } from "file-saver";
 import { Clock, Download, MailCheck } from "lucide-react";
 import { Dispatch, SetStateAction, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { saveAs } from "file-saver";
-import { generatePdf } from "@/services/pdf/generatePDF";
-import { useUserConfig } from "@/services/query/useUserConfig";
-import { getPeriod } from "@/utils/date";
 
 type Props = {
   setSelectedPeriods: Dispatch<SetStateAction<string[]>>;
@@ -89,7 +89,7 @@ const isManuallySubmitted = ({
 }) =>
   userData?.declarations?.some(
     ({ year: dYear, month: dMonth, ...rest }) =>
-      dYear === year && dMonth === month && "manual" in rest
+      dYear === year && dMonth === month && "manual" in rest,
   );
 
 const getDeclaration = ({
@@ -105,7 +105,7 @@ const getDeclaration = ({
     (submission) =>
       submission.year === year &&
       submission.month === month &&
-      "declarationRows" in submission
+      "declarationRows" in submission,
   );
 
   if (submission && isAppSubmission(submission)) {
@@ -150,7 +150,7 @@ export const DashboardMonthPicker = ({
         return [...periods, period];
       });
     },
-    [selectedPeriods]
+    [selectedPeriods, setSelectedPeriods],
   );
 
   const onDownloadButtonClick = useCallback(
@@ -166,16 +166,16 @@ export const DashboardMonthPicker = ({
         const len = binary.length;
         const buffer = new ArrayBuffer(len);
         const view = new Uint8Array(buffer);
-        for (var i = 0; i < len; i++) {
+        for (let i = 0; i < len; i++) {
           view[i] = binary.charCodeAt(i);
         }
 
-        var blob = new Blob([view], { type: "application/pdf" });
+        const blob = new Blob([view], { type: "application/pdf" });
 
         saveAs(blob, declaration.filename);
       }
     },
-    [userSettings]
+    [userSettings],
   );
 
   return (
@@ -235,7 +235,7 @@ export const DashboardMonthPicker = ({
                 const tooltipMessage = (function () {
                   if (_isManuallySubmitted) {
                     return t(
-                      "dashboard.monthPicker.tooltips.manuallySubmitted"
+                      "dashboard.monthPicker.tooltips.manuallySubmitted",
                     );
                   }
 
@@ -286,7 +286,7 @@ export const DashboardMonthPicker = ({
                                   ["text-neutral-200"]: isDisabled,
                                   ["border-0"]:
                                     isDisabled || selectedPeriods.length === 0,
-                                }
+                                },
                               )}
                               onClick={
                                 !isDisabled
@@ -311,7 +311,7 @@ export const DashboardMonthPicker = ({
                                   <Clock size="1rem" />
                                   <span className="text-sm">
                                     {new Date(declaration.date).toLocaleString(
-                                      "language"
+                                      "language",
                                     )}
                                   </span>
                                 </div>
@@ -320,7 +320,7 @@ export const DashboardMonthPicker = ({
                                     <MailCheck size="1rem" />
                                     <span className="text-sm">
                                       {t(
-                                        "dashboard.monthPicker.submitted.emailSent"
+                                        "dashboard.monthPicker.submitted.emailSent",
                                       )}
                                     </span>
                                   </div>

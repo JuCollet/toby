@@ -3,16 +3,17 @@ import "./i18n.ts";
 
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Error } from "./pages/app/Error.tsx";
-import { Settings } from "./pages/app/settings/Settings.tsx";
+
+import { App } from "./App.tsx";
 import { Auth } from "./pages/app/Auth.tsx";
 import { Dashboard } from "./pages/app/dashboard/Dashboard.tsx";
 import { Declaration } from "./pages/app/declaration/Declaration.tsx";
 import { DeclarationCreate } from "./pages/app/declaration/DeclarationCreate.tsx";
 import { DeclarationPay } from "./pages/app/declaration/DeclarationPay.tsx";
-import { DeclarationSubmit } from "./pages/app/declaration/DeclarationSubmit.tsx";
 import { DeclarationSign } from "./pages/app/declaration/DeclarationSign.tsx";
-import { App } from "./App.tsx";
+import { DeclarationSubmit } from "./pages/app/declaration/DeclarationSubmit.tsx";
+import { Error } from "./pages/app/Error.tsx";
+import { Settings } from "./pages/app/settings/Settings.tsx";
 import { Landing } from "./pages/Landing.tsx";
 
 const router = createBrowserRouter(
@@ -66,9 +67,9 @@ const router = createBrowserRouter(
       element: <Error />,
     },
   ],
-  { basename: "/toby" }
+  { basename: "/toby" },
 );
 
 createRoot(document.getElementById("root")!).render(
-  <RouterProvider router={router} />
+  <RouterProvider router={router} />,
 );

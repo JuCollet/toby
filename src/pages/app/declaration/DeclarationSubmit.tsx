@@ -1,13 +1,4 @@
 import { Page } from "@/components/Page";
-import { Button } from "@/components/ui/button";
-import { useSendEmail } from "@/services/query/useSendEmail";
-import { useUserConfig } from "@/services/query/useUserConfig";
-import { File, Save, Send } from "lucide-react";
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { DeclarationContext } from "./Declaration";
-import { useStoreGoogleDriveAppFile } from "@/services/query/useStoreGoogleDriveAppFile";
-import { useUserData } from "@/services/query/useUserData";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -19,7 +10,17 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
+import { useSendEmail } from "@/services/query/useSendEmail";
+import { useStoreGoogleDriveAppFile } from "@/services/query/useStoreGoogleDriveAppFile";
+import { useUserConfig } from "@/services/query/useUserConfig";
+import { useUserData } from "@/services/query/useUserData";
+import { File, Save, Send } from "lucide-react";
+import { useContext } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+
+import { DeclarationContext } from "./Declaration";
 
 export const DeclarationSubmit = () => {
   const { t } = useTranslation();

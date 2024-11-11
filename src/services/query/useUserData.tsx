@@ -1,4 +1,5 @@
 import { DeclarationRow } from "@/pages/app/declaration/Declaration";
+
 import { useGoogleDriveAppFile } from "./useGoogleDriveAppFile";
 import { useGoogleDriveAppFiles } from "./useGoogleDriveAppFiles";
 
@@ -13,7 +14,7 @@ export type AppSubmission = {
 };
 
 export const isAppSubmission = (
-  submission: Submission
+  submission: Submission,
 ): submission is AppSubmission => "isEmailSent" in submission;
 
 export type Submission = ManualSubmission | AppSubmission;

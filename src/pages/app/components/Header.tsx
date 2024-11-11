@@ -1,8 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
-import { LogOut, Menu, UserRoundCog } from "lucide-react";
-import { useContext } from "react";
-import { AuthContext } from "@/context/AuthProvider";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,7 +7,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { AuthContext } from "@/context/AuthProvider";
+import { LogOut, Menu, UserRoundCog } from "lucide-react";
+import { useContext } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 export const AppHeader = () => {
   const { t } = useTranslation();
