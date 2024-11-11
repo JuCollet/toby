@@ -24,7 +24,7 @@ Centre de perception - Taxes diverses
 BE39679200229319
 EUR{{amount}}
 
-NISS {{niss}} {{name}} - TOB {{period}}`,qrcodeHint:"Scan this QR Code with your banking application."},submit:{email:{message:`Dear Sir/Madam,
+TOB/{{niss}} - {{name}} - {{period}}`,qrcodeHint:"Scan this QR Code with your banking application."},submit:{email:{message:`Dear Sir/Madam,
 
 Please find attached the TST declaration for {{period}}.
 
@@ -40,7 +40,7 @@ Centrum voor inning - Diverse belastingen
 BE39679200229319
 EUR{{amount}}
 
-NISS {{niss}} {{name}} - TOB {{period}}`,qrcodeHint:"Scan deze QR-code met uw bankapplicatie."},submit:{email:{message:`Geachte heer/mevrouw,
+TOB/{{niss}} - {{name}} - {{period}}`,qrcodeHint:"Scan deze QR-code met uw bankapplicatie."},submit:{email:{message:`Geachte heer/mevrouw,
 
 Bijgevoegd vindt u de TST-aangifte voor {{period}}.
 
@@ -56,7 +56,7 @@ Centre de perception - Taxes diverses
 BE39679200229319
 EUR{{amount}}
 
-NISS {{niss}} {{name}} - TOB {{period}}`,qrcodeHint:"Scannez ce QR Code avec votre application bancaire."},submit:{email:{message:`Madame, Monsieur,
+TOB/{{niss}} - {{name}} - {{period}}`,qrcodeHint:"Scannez ce QR Code avec votre application bancaire."},submit:{email:{message:`Madame, Monsieur,
 
 Veuillez trouver ci-joint la déclaration TOB pour {{period}}.
 
