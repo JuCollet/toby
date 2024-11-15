@@ -23,7 +23,7 @@
     }
   },
   "landing": {
-    "hero": "Soumettez votre déclaration TOB\n en quelques minutes."
+    "hero": "Soumettez votre déclaration TOB\n en quelques clics."
   },
   "dashboard": {
     "title": "Mes déclarations.",
@@ -93,7 +93,7 @@
         "buttonLabel": "Payer",
         "warning": {
           "title": "Veuillez vérifier",
-          "description": "Veuillez examiner toutes les informations attentivement avant de procéder. Toby ne peut être tenu responsable de toute erreur dans votre déclaration."
+          "description": "Veuillez examiner toutes les informations attentivement avant de procéder. toby ne peut être tenu responsable de toute erreur dans votre déclaration."
         }
       }
     },

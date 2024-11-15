@@ -16,59 +16,56 @@ import { Error } from "./pages/app/Error.tsx";
 import { Settings } from "./pages/app/settings/Settings.tsx";
 import { Landing } from "./pages/Landing.tsx";
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <Landing />,
-    },
-    {
-      path: "/app",
-      element: <App />,
-      children: [
-        {
-          path: "auth",
-          element: <Auth />,
-        },
-        {
-          path: "settings",
-          element: <Settings />,
-        },
-        {
-          path: "dashboard",
-          element: <Dashboard />,
-        },
-        {
-          path: "declaration",
-          element: <Declaration />,
-          children: [
-            {
-              path: "create",
-              element: <DeclarationCreate />,
-            },
-            {
-              path: "sign",
-              element: <DeclarationSign />,
-            },
-            {
-              path: "pay",
-              element: <DeclarationPay />,
-            },
-            {
-              path: "submit",
-              element: <DeclarationSubmit />,
-            },
-          ],
-        },
-      ],
-    },
-    {
-      path: "error",
-      element: <Error />,
-    },
-  ],
-  { basename: "/toby" },
-);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Landing />,
+  },
+  {
+    path: "/app",
+    element: <App />,
+    children: [
+      {
+        path: "auth",
+        element: <Auth />,
+      },
+      {
+        path: "settings",
+        element: <Settings />,
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "declaration",
+        element: <Declaration />,
+        children: [
+          {
+            path: "create",
+            element: <DeclarationCreate />,
+          },
+          {
+            path: "sign",
+            element: <DeclarationSign />,
+          },
+          {
+            path: "pay",
+            element: <DeclarationPay />,
+          },
+          {
+            path: "submit",
+            element: <DeclarationSubmit />,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    path: "error",
+    element: <Error />,
+  },
+]);
 
 createRoot(document.getElementById("root")!).render(
   <RouterProvider router={router} />,

@@ -190,7 +190,7 @@ export const generatePdf = async ({
   periods: string[];
   b64signature?: string;
 }) => {
-  const baseFilePath = `${window.location.origin}/toby/tob_form.pdf`;
+  const baseFilePath = `${window.location.origin}/tob_form.pdf`;
   const existingPdfBytes = await fetch(baseFilePath).then((res) =>
     res.arrayBuffer(),
   );

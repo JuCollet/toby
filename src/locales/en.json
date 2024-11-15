@@ -93,7 +93,7 @@
         "buttonLabel": "Pay",
         "warning": {
           "title": "Please review",
-          "description": "Please review all information carefully before proceeding. Toby cannot be held responsible for any errors in your declaration."
+          "description": "Please review all information carefully before proceeding. toby cannot be held responsible for any errors in your declaration."
         }
       }
     },
