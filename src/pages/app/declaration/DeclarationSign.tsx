@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { generatePdf } from "@/services/pdf/generatePDF";
-import { useUserConfig } from "@/services/query/useUserConfig";
+import { useGoogleDriveConfigFile } from "@/services/query/useGoogleDrive";
 import { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -26,7 +26,7 @@ export const DeclarationSign = () => {
   const navigate = useNavigate();
   const { declarationRows, b64Signature, periods, b64Document, setDocument } =
     useContext(DeclarationContext);
-  const { data: userSettings } = useUserConfig();
+  const { data: userSettings } = useGoogleDriveConfigFile();
 
   useEffect(() => {
     if (userSettings) {

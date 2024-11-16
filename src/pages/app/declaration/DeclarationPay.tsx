@@ -1,6 +1,6 @@
 import { Page } from "@/components/Page";
 import { Button } from "@/components/ui/button";
-import { useUserConfig } from "@/services/query/useUserConfig";
+import { useGoogleDriveConfigFile } from "@/services/query/useGoogleDrive";
 import { getJoinedPeriod } from "@/utils/date";
 import { useContext } from "react";
 import { useTranslation } from "react-i18next";
@@ -22,12 +22,12 @@ export const DeclarationPay = () => {
     i18n: { language },
   } = useTranslation();
   const { declarationRows, periods } = useContext(DeclarationContext);
-  const { data } = useUserConfig();
+  const { data } = useGoogleDriveConfigFile();
   const amount = getTotalAmount({ declarationRows }).toFixed(2);
   const epcData = t("declaration.pay.qrcodePayload", {
     amount,
-    niss: data.niss,
-    name: `${data.lastName} ${data.firstName}`.toUpperCase(),
+    niss: data?.niss,
+    name: `${data?.lastName} ${data?.firstName}`.toUpperCase(),
     period: getJoinedPeriod({ periods, locale: language }),
   });
 

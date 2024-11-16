@@ -1,7 +1,7 @@
 import { Page } from "@/components/Page";
 import { Button } from "@/components/ui/button";
+import { useGoogleDriveConfigFile } from "@/services/query/useGoogleDrive";
 import { useStoreGoogleDriveAppFile } from "@/services/query/useStoreGoogleDriveAppFile";
-import { useUserConfig } from "@/services/query/useUserConfig";
 import { Loader2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -14,7 +14,7 @@ export const Settings = () => {
     i18n: { language },
   } = useTranslation();
   const { state } = useLocation();
-  const { data, isLoading, fileId } = useUserConfig();
+  const { data, isLoading, fileId } = useGoogleDriveConfigFile();
   const navigate = useNavigate();
   const { mutateAsync, isLoading: isSaving } = useStoreGoogleDriveAppFile({
     fileName: "config",

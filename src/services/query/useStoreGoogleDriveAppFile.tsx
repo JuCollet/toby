@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useMutation, useQueryClient } from "react-query";
 
 import { AuthContext } from "../../context/AuthProvider";
+import { queryKeys } from "./keys";
 
 async function uploadFileToDrive({
   accessToken,
@@ -68,7 +69,12 @@ export const useStoreGoogleDriveAppFile = ({
     mutationFn: ({ data, fileId }: { data: string; fileId?: string }) =>
       uploadFileToDrive({ accessToken: token ?? "", data, fileId, fileName }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["DRIVE_FILES"] });
+      queryClient.invalidateQueries({
+        queryKey:
+          fileName === "config"
+            ? queryKeys.driveConfigFile()
+            : queryKeys.driveDataFile(),
+      });
       if (onSuccess) {
         onSuccess();
       }

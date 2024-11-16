@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useMutation } from "react-query";
 
 import { AuthContext } from "../../context/AuthProvider";
-import { UserSettings } from "./useUserConfig";
+import { GoogleDriveConfigFile } from "../client/google/drive";
 
 const BOUNDARY = "boundary";
 
@@ -80,7 +80,7 @@ export const useSendEmail = ({
   userSettings,
   periods,
 }: {
-  userSettings: UserSettings;
+  userSettings: GoogleDriveConfigFile;
   periods: string[];
 }) => {
   const {

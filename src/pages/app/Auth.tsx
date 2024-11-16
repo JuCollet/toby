@@ -1,24 +1,21 @@
-import { useUserConfig } from "@/services/query/useUserConfig";
+import { useGoogleDriveConfigFile } from "@/services/query/useGoogleDrive";
 import { LoaderCircle } from "lucide-react";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Navigate } from "react-router-dom";
-
-import { useGoogleDriveAppFiles } from "../../services/query/useGoogleDriveAppFiles";
 
 export const Auth = () => {
   const {
     t,
     i18n: { language, changeLanguage },
   } = useTranslation();
-  const { data, isLoading } = useGoogleDriveAppFiles();
-  const { data: userConfig } = useUserConfig();
+  const { data, isLoading } = useGoogleDriveConfigFile();
 
   useEffect(() => {
-    if (userConfig?.language && userConfig?.language != language) {
-      changeLanguage(userConfig.language);
+    if (data?.language && data?.language != language) {
+      changeLanguage(data.language);
     }
-  }, [userConfig, language, changeLanguage]);
+  }, [data, language, changeLanguage]);
 
   if (isLoading) {
     return (
@@ -29,10 +26,7 @@ export const Auth = () => {
     );
   }
 
-  if (
-    data?.files?.length === 0 ||
-    !data?.files.find((file) => file.name === "config")
-  ) {
+  if (data === null && !isLoading) {
     return <Navigate to="/app/settings" state={{ init: true }} replace />;
   }
 

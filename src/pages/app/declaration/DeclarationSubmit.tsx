@@ -11,10 +11,12 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
+import {
+  useGoogleDriveConfigFile,
+  useGoogleDriveDataFile,
+} from "@/services/query/useGoogleDrive";
 import { useSendEmail } from "@/services/query/useSendEmail";
 import { useStoreGoogleDriveAppFile } from "@/services/query/useStoreGoogleDriveAppFile";
-import { useUserConfig } from "@/services/query/useUserConfig";
-import { useUserData } from "@/services/query/useUserData";
 import { File, Save, Send } from "lucide-react";
 import { useContext } from "react";
 import { useTranslation } from "react-i18next";
@@ -24,8 +26,8 @@ import { DeclarationContext } from "./Declaration";
 
 export const DeclarationSubmit = () => {
   const { t } = useTranslation();
-  const { data: userSettings } = useUserConfig();
-  const { data: userData } = useUserData();
+  const { data: userSettings } = useGoogleDriveConfigFile();
+  const { data: userData } = useGoogleDriveDataFile();
   const navigate = useNavigate();
   const { b64Document, declarationRows, periods } =
     useContext(DeclarationContext);

@@ -1,7 +1,7 @@
 import { Page } from "@/components/Page";
 import { Button } from "@/components/ui/button";
+import { useGoogleDriveDataFile } from "@/services/query/useGoogleDrive";
 import { useStoreGoogleDriveAppFile } from "@/services/query/useStoreGoogleDriveAppFile";
-import { useUserData } from "@/services/query/useUserData";
 import { getPeriod } from "@/utils/date";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -14,7 +14,7 @@ export const Dashboard = () => {
   const [selectedPeriods, setSelectedPeriods] = useState<string[]>([]);
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { data, isLoading } = useUserData();
+  const { data, isLoading } = useGoogleDriveDataFile();
   const { mutate, isLoading: isLoadingStoredFile } = useStoreGoogleDriveAppFile(
     {
       fileName: "data",

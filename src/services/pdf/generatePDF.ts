@@ -2,7 +2,7 @@ import { DeclarationRow } from "@/pages/app/declaration/Declaration";
 import { getRoundedFloat } from "@/utils/number";
 import { PDFDocument, PDFPage, rgb, StandardFonts } from "pdf-lib";
 
-import { UserSettings } from "../query/useUserConfig";
+import { GoogleDriveConfigFile } from "../client/google/drive";
 
 type Article = "1201" | "1203";
 type Rate = "012" | "035" | "132";
@@ -186,7 +186,7 @@ export const generatePdf = async ({
   b64signature,
 }: {
   declarationRows: DeclarationRow[];
-  userSettings: UserSettings;
+  userSettings: GoogleDriveConfigFile;
   periods: string[];
   b64signature?: string;
 }) => {

@@ -10,13 +10,13 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { generatePdf } from "@/services/pdf/generatePDF";
-import { useUserConfig } from "@/services/query/useUserConfig";
 import {
   Declaration,
+  GoogleDriveDataFile,
   isAppSubmission,
-  UserData,
-} from "@/services/query/useUserData";
+} from "@/services/client/google/drive";
+import { generatePdf } from "@/services/pdf/generatePDF";
+import { useGoogleDriveConfigFile } from "@/services/query/useGoogleDrive";
 import { getPeriod } from "@/utils/date";
 import clsx from "clsx";
 import { saveAs } from "file-saver";
@@ -27,7 +27,7 @@ import { useTranslation } from "react-i18next";
 type Props = {
   setSelectedPeriods: Dispatch<SetStateAction<string[]>>;
   selectedPeriods: string[];
-  userData: UserData;
+  userData: GoogleDriveDataFile;
 };
 
 const isSelectable = ({
@@ -83,7 +83,7 @@ const isManuallySubmitted = ({
   year,
   month,
 }: {
-  userData: UserData;
+  userData: GoogleDriveDataFile;
   year: number;
   month: number;
 }) =>
@@ -97,7 +97,7 @@ const getDeclaration = ({
   year,
   month,
 }: {
-  userData: UserData;
+  userData: GoogleDriveDataFile;
   year: number;
   month: number;
 }): Declaration | null => {
@@ -120,7 +120,7 @@ export const DashboardMonthPicker = ({
   setSelectedPeriods,
   userData,
 }: Props) => {
-  const { data: userSettings } = useUserConfig();
+  const { data: userSettings } = useGoogleDriveConfigFile();
   const {
     t,
     i18n: { language },
