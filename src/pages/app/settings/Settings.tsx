@@ -14,7 +14,7 @@ export const Settings = () => {
     i18n: { language },
   } = useTranslation();
   const { state } = useLocation();
-  const { data, isLoading, fileId } = useGoogleDriveConfigFile();
+  const { data, isLoading } = useGoogleDriveConfigFile();
   const navigate = useNavigate();
   const { mutateAsync, isLoading: isSaving } = useStoreGoogleDriveAppFile({
     fileName: "config",
@@ -57,7 +57,7 @@ export const Settings = () => {
     >
       <SettingsForm
         defaultValues={{ ...data, language }}
-        fileId={fileId}
+        fileId={data?.fileId}
         onSubmit={mutateAsync}
       />
     </Page>

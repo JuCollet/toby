@@ -23,14 +23,14 @@ import { useTranslation } from "react-i18next";
 import { z } from "zod";
 
 const formSchema = z.object({
-  firstName: z.string(),
-  lastName: z.string(),
-  street: z.string(),
-  streetNo: z.string(),
-  zipCode: z.string(),
-  locality: z.string(),
-  niss: z.string(),
-  language: z.string(),
+  firstName: z.string().optional(),
+  lastName: z.string().optional(),
+  street: z.string().optional(),
+  streetNo: z.string().optional(),
+  zipCode: z.string().optional(),
+  locality: z.string().optional(),
+  niss: z.string().optional(),
+  language: z.string().optional(),
 });
 
 export const SettingsForm = ({

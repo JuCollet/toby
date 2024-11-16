@@ -80,7 +80,7 @@ export const useSendEmail = ({
   userSettings,
   periods,
 }: {
-  userSettings: GoogleDriveConfigFile;
+  userSettings?: GoogleDriveConfigFile;
   periods: string[];
 }) => {
   const {
@@ -146,7 +146,7 @@ export const useSendEmail = ({
 
   const message = t("declaration.submit.email.message", {
     period,
-    name: `${userSettings.firstName} ${userSettings.lastName}`,
+    name: `${userSettings?.firstName} ${userSettings?.lastName}`,
   });
 
   const subject = t("declaration.submit.email.subject", {
@@ -156,8 +156,8 @@ export const useSendEmail = ({
     .replace(/[\u0300-\u036f]/g, "");
 
   const filename = t("declaration.submit.email.filename", {
-    lastname: userSettings.lastName,
-    firstname: userSettings.firstName,
+    lastname: userSettings?.lastName,
+    firstname: userSettings?.firstName,
     period: filenamePeriod.replace(/\./g, ""),
   }).toUpperCase();
   return {

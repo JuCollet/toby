@@ -27,7 +27,7 @@ import { useTranslation } from "react-i18next";
 type Props = {
   setSelectedPeriods: Dispatch<SetStateAction<string[]>>;
   selectedPeriods: string[];
-  userData: GoogleDriveDataFile;
+  userData?: GoogleDriveDataFile;
 };
 
 const isSelectable = ({
@@ -83,9 +83,9 @@ const isManuallySubmitted = ({
   year,
   month,
 }: {
-  userData: GoogleDriveDataFile;
   year: number;
   month: number;
+  userData?: GoogleDriveDataFile;
 }) =>
   userData?.declarations?.some(
     ({ year: dYear, month: dMonth, ...rest }) =>
@@ -97,9 +97,9 @@ const getDeclaration = ({
   year,
   month,
 }: {
-  userData: GoogleDriveDataFile;
   year: number;
   month: number;
+  userData?: GoogleDriveDataFile;
 }): Declaration | null => {
   const submission = userData?.declarations?.find(
     (submission) =>
@@ -155,7 +155,7 @@ export const DashboardMonthPicker = ({
 
   const onDownloadButtonClick = useCallback(
     async ({ declaration }: { declaration: Declaration }) => {
-      if ("declarationRows" in declaration) {
+      if ("declarationRows" in declaration && userSettings) {
         const pdf = await generatePdf({
           declarationRows: declaration.declarationRows,
           userSettings,
