@@ -7,24 +7,18 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { AuthContext } from "@/context/AuthProvider";
+import { useGoogleAuthLogout } from "@/services/query/useGoogleDriveAuth";
 import { LogOut, Menu, UserRoundCog } from "lucide-react";
-import { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 export const AppHeader = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { token } = useContext(AuthContext);
+  const { mutateAsync } = useGoogleAuthLogout();
 
   const onLogoutButtonClick = async () => {
-    await fetch(`https://oauth2.googleapis.com/revoke?token=${token}`, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/x-www-form-urlencoded",
-      },
-    });
+    await mutateAsync();
     navigate("/");
   };
 
