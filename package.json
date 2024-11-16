@@ -6,7 +6,7 @@
   "homepage": "https://JuCollet.github.io/toby",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && cp dist/index.html dist/app/auth.html",
+    "build": "tsc -b && vite build && cp dist/index.html dist/app/auth.html && cp dist/index.html dist/404.html",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
