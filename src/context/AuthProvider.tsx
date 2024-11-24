@@ -8,7 +8,10 @@ import {
 
 import { getCodeChallenge, getCodeVerifier } from "../services/helpers";
 
+type Permission = "drive" | "gmail";
+
 type AuthState = {
+  permissions?: Permission[];
   token?: string | null;
   error?: string;
 };
@@ -66,7 +69,20 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
       });
       const data = await res.json();
 
-      setState((p) => ({ ...p, token: data.access_token }));
+      const permissions: Permission[] = data.scope
+        .split(" ")
+        .map((domain: string) => {
+          if (/gmail\.send/.test(domain)) {
+            return "gmail";
+          }
+          if (/drive\.appdata/.test(domain)) {
+            return "drive";
+          }
+          return null;
+        })
+        .filter(Boolean);
+
+      setState((p) => ({ ...p, token: data.access_token, permissions }));
     },
     [],
   );

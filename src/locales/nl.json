@@ -1,123 +1,143 @@
 {
-  "common": {
-    "download": "Downloaden",
-    "start": "Starten",
-    "letsDoIt": "Laten we het doen!",
-    "periods_two": "{{first}} en {{second}}",
-    "back": "Terug",
-    "next": "Volgende",
-    "save": "Opslaan",
-    "clear": "Wissen",
-    "cancel": "Annuleren",
-    "continue": "Doorgaan",
-    "sign": "Ondertekenen",
-    "french": "Frans",
-    "dutch": "Nederlands",
-    "english": "Engels"
-  },
-  "header": {
-    "links": {
-      "settings": "Instellingen",
-      "faq": "FAQ",
-      "logout": "Uitloggen"
+  "auth": {
+    "pendingLabel": "Bezig met authenticeren...",
+    "permissionErrorDialog": {
+      "description": "Toby heeft toegang tot uw Google Drive nodig om correct te functioneren. Deze toegang wordt gebruikt om uw gegevens op te slaan en uw aangiftebestand te genereren. Toby heeft alleen toegang tot bestanden die hij zelf aanmaakt op uw Google Drive en kan geen andere inhoud bekijken of wijzigen. Als u verder wilt gaan, probeer het dan opnieuw en geef de vereiste toestemming.",
+      "title": "Toegang tot Google Drive vereist"
     }
   },
-  "landing": {
-    "hero": "Dien uw TST-aangifte\n binnen enkele minuten in."
+  "common": {
+    "back": "Terug",
+    "cancel": "Annuleren",
+    "clear": "Wissen",
+    "continue": "Doorgaan",
+    "download": "Downloaden",
+    "dutch": "Nederlands",
+    "english": "Engels",
+    "french": "Frans",
+    "letsDoIt": "Laten we het doen!",
+    "next": "Volgende",
+    "ok": "Ok",
+    "periods_two": "{{first}} en {{second}}",
+    "save": "Opslaan",
+    "sign": "Ondertekenen",
+    "start": "Starten"
   },
   "dashboard": {
-    "title": "Mijn aangiften.",
-    "monthPicker": {
-      "tooltips": {
-        "manuallySubmitted": "Deze aangifte is handmatig ingediend",
-        "timeToSubmit": "Deze aangifte kan nu worden ingediend",
-        "lastCallToSubmit": "Deze aangifte moet nu worden ingediend"
-      },
-      "submitted": {
-        "title": "Ingediende aangifte",
-        "emailSent": "E-mail verzonden"
-      }
-    },
     "footer": {
-      "tagManualDeclarationButtonLabel": "Markeren als handmatig ingediend",
-      "createDeclarationButtonLabel": "Aangifte maken"
-    }
-  },
-  "auth": {
-    "pendingLabel": "Bezig met authenticeren..."
-  },
-  "settings": {
-    "title": "Instellingen.",
-    "save": {
-      "success": {
-        "title": "Succes",
-        "description": "Instellingen succesvol opgeslagen."
+      "createDeclarationButtonLabel": "Aangifte maken",
+      "tagManualDeclarationButtonLabel": "Markeren als handmatig ingediend"
+    },
+    "monthPicker": {
+      "submitted": {
+        "emailSent": "E-mail verzonden",
+        "title": "Ingediende aangifte"
+      },
+      "tooltips": {
+        "lastCallToSubmit": "Deze aangifte moet nu worden ingediend",
+        "manuallySubmitted": "Deze aangifte is handmatig ingediend",
+        "timeToSubmit": "Deze aangifte kan nu worden ingediend"
       }
     },
-    "form": {
-      "labels": {
-        "firstName": "Voornaam",
-        "lastName": "Achternaam",
-        "street": "Straat",
-        "number": "Nummer",
-        "postalCode": "Postcode",
-        "locality": "Plaats",
-        "niss": "NISS",
-        "language": "Taal"
-      }
-    }
+    "title": "Mijn aangiften."
   },
   "declaration": {
+    "create": {
+      "payment": "Betaling",
+      "rate": "Tarief",
+      "reimbursement": "Terugbetaling",
+      "stock": "Voorraad",
+      "taxAmount": "Belastingbedrag (EUR)",
+      "taxBasis": "Belastinggrondslag (EUR)",
+      "title": "Vul uw aangifte in.",
+      "type": "Type"
+    },
+    "pay": {
+      "qrcodeHint": "Scan deze QR-code met uw bankapplicatie.",
+      "qrcodePayload": "BCD\n001\n1\nSCT\nPCHQBEBB\nCentrum voor inning - Diverse belastingen\nBE39679200229319\nEUR{{amount}}\n\nTOB - {{niss}} - {{name}} - {{period}}",
+      "title": "Betaal uw TST."
+    },
     "send": {
-      "title": "Versturen naar administratie.",
       "email": {
         "recipientLabel": "Ontvanger: ",
         "subjectLabel": "Onderwerp:"
       },
       "footer": {
+        "sendButtonLabel": "Verzenden",
         "submitButtonLabel": "Opslaan en verzenden",
         "submitWarning": {
-          "title": "Waarschuwing",
-          "description": "Er zal een e-mail worden verstuurd naar de administratie via uw Gmail-account. Controleer na het indienen van de aangifte uw Gmail-outbox om te bevestigen dat deze succesvol is verzonden. Als dat niet het geval is, dien de aangifte dan handmatig in."
-        },
-        "sendButtonLabel": "Verzenden"
-      }
+          "description": "Er zal een e-mail worden verstuurd naar de administratie via uw Gmail-account. Controleer na het indienen van de aangifte uw Gmail-outbox om te bevestigen dat deze succesvol is verzonden. Als dat niet het geval is, dien de aangifte dan handmatig in.",
+          "title": "Waarschuwing"
+        }
+      },
+      "title": "Versturen naar administratie."
     },
     "sign": {
-      "title": "Controleer uw aangifte.",
       "modal": {
-        "title": "Onderteken uw aangifte hier.",
-        "signButtonLabel": "Ondertekenen"
+        "signButtonLabel": "Ondertekenen",
+        "title": "Onderteken uw aangifte hier."
       },
       "pay": {
         "buttonLabel": "Betalen",
         "warning": {
-          "title": "Controleer alstublieft",
-          "description": "Controleer alle informatie zorgvuldig voordat u verdergaat. toby kan niet verantwoordelijk worden gehouden voor fouten in uw aangifte."
+          "description": "Controleer alle informatie zorgvuldig voordat u verdergaat. toby kan niet verantwoordelijk worden gehouden voor fouten in uw aangifte.",
+          "title": "Controleer alstublieft"
         }
-      }
-    },
-    "pay": {
-      "title": "Betaal uw TST.",
-      "qrcodePayload": "BCD\n001\n1\nSCT\nPCHQBEBB\nCentrum voor inning - Diverse belastingen\nBE39679200229319\nEUR{{amount}}\n\nTOB/{{niss}} - {{name}} - {{period}}",
-      "qrcodeHint": "Scan deze QR-code met uw bankapplicatie."
+      },
+      "title": "Controleer uw aangifte."
     },
     "submit": {
       "email": {
+        "filename": "{{lastname}}_{{firstname}}_TOB_{{period}}.pdf",
         "message": "Geachte heer/mevrouw,\n\nBijgevoegd vindt u de TST-aangifte voor {{period}}.\n\nMet vriendelijke groet,\n\n{{name}}",
-        "subject": "TST-aangifte voor {{period}}",
-        "filename": "{{lastname}}_{{firstname}}_TOB_{{period}}.pdf"
+        "subject": "TST-aangifte voor {{period}}"
+      }
+    }
+  },
+  "header": {
+    "links": {
+      "faq": "FAQ",
+      "logout": "Uitloggen",
+      "settings": "Instellingen"
+    }
+  },
+  "landing": {
+    "hero": "Dien uw TST-aangifte\n binnen enkele minuten in.",
+    "infoDialog": {
+      "ctaLabel": "Laten we gaan",
+      "description": "U wordt doorgestuurd naar Google om Toby toegang te geven tot uw Google Drive- en Gmail-accounts.",
+      "drive": {
+        "descripton": "Al uw Toby-gegevens worden opgeslagen in een speciale map in uw Google Drive-account, en Toby heeft alleen toegang tot deze bestanden. Dit zorgt ervoor dat uw persoonlijke gegevens veilig blijven en alleen door u toegankelijk zijn.",
+        "title": "Google Drive",
+        "titleSuffix": "(vereist)"
+      },
+      "gmail": {
+        "descripton": "Door Toby toegang te geven tot uw Gmail-account, kunt u uw aangifte met één klik naar de administratie verzenden. Toby heeft geen toegang tot uw mailbox. Als u zich hier ongemakkelijk bij voelt, kunt u een apart Gmail-account aanmaken om uw aangiften te beheren.",
+        "title": "Gmail",
+        "titleSuffix": "(aanbevolen)"
+      },
+      "title": "Verbind uw Google-account"
+    }
+  },
+  "settings": {
+    "form": {
+      "labels": {
+        "firstName": "Voornaam",
+        "language": "Taal",
+        "lastName": "Achternaam",
+        "locality": "Plaats",
+        "niss": "NISS",
+        "number": "Nummer",
+        "postalCode": "Postcode",
+        "street": "Straat"
       }
     },
-    "create": {
-      "title": "Vul uw aangifte in.",
-      "stock": "Voorraad",
-      "type": "Type",
-      "rate": "Tarief",
-      "taxBasis": "Belastinggrondslag (EUR)",
-      "taxAmount": "Belastingbedrag (EUR)",
-      "payment": "Betaling",
-      "reimbursement": "Terugbetaling"
-    }
+    "save": {
+      "success": {
+        "description": "Instellingen succesvol opgeslagen.",
+        "title": "Succes"
+      }
+    },
+    "title": "Instellingen."
   }
 }

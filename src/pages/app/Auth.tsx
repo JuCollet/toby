@@ -1,8 +1,11 @@
+import { AuthContext } from "@/context/AuthProvider";
 import { useGoogleDriveConfigFile } from "@/services/query/useGoogleDrive";
 import { LoaderCircle } from "lucide-react";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Navigate } from "react-router-dom";
+
+import { AuthPermissionErrorDialog } from "./components/AuthPermissionErrorDialog";
 
 export const Auth = () => {
   const {
@@ -10,6 +13,7 @@ export const Auth = () => {
     i18n: { language, changeLanguage },
   } = useTranslation();
   const { data, isLoading } = useGoogleDriveConfigFile();
+  const { permissions } = useContext(AuthContext);
 
   useEffect(() => {
     if (data?.language && data?.language != language) {
@@ -24,6 +28,10 @@ export const Auth = () => {
         <h1>{t("auth.pendingLabel")}</h1>
       </div>
     );
+  }
+
+  if (!permissions?.includes("drive")) {
+    return <AuthPermissionErrorDialog />;
   }
 
   if (data === null && !isLoading) {

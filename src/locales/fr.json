@@ -1,123 +1,143 @@
 {
-  "common": {
-    "download": "Télécharger",
-    "start": "Commencer",
-    "letsDoIt": "Allons-y !",
-    "periods_two": "{{first}} et {{second}}",
-    "back": "Retour",
-    "next": "Suivant",
-    "save": "Sauvegarder",
-    "clear": "Effacer",
-    "cancel": "Annuler",
-    "continue": "Continuer",
-    "sign": "Signer",
-    "french": "Français",
-    "dutch": "Néerlandais",
-    "english": "Anglais"
-  },
-  "header": {
-    "links": {
-      "settings": "Paramètres",
-      "faq": "FAQ",
-      "logout": "Déconnexion"
+  "auth": {
+    "pendingLabel": "Authentification en cours...",
+    "permissionErrorDialog": {
+      "description": "Toby nécessite un accès à votre Google Drive pour fonctionner correctement. Cet accès est utilisé pour stocker vos données et générer votre fichier de déclaration. Toby ne peut accéder qu'aux fichiers qu'il crée sur votre Google Drive et ne peut ni consulter ni modifier aucun autre contenu. Si vous souhaitez continuer, veuillez réessayer et accorder les autorisations nécessaires.",
+      "title": "Accès à Google Drive requis"
     }
   },
-  "landing": {
-    "hero": "Soumettez votre déclaration TOB\n en quelques clics."
+  "common": {
+    "back": "Retour",
+    "cancel": "Annuler",
+    "clear": "Effacer",
+    "continue": "Continuer",
+    "download": "Télécharger",
+    "dutch": "Néerlandais",
+    "english": "Anglais",
+    "french": "Français",
+    "letsDoIt": "Allons-y !",
+    "next": "Suivant",
+    "ok": "Ok",
+    "periods_two": "{{first}} et {{second}}",
+    "save": "Sauvegarder",
+    "sign": "Signer",
+    "start": "Commencer"
   },
   "dashboard": {
-    "title": "Mes déclarations.",
-    "monthPicker": {
-      "tooltips": {
-        "manuallySubmitted": "Cette déclaration a été soumise manuellement",
-        "timeToSubmit": "Cette déclaration peut maintenant être soumise",
-        "lastCallToSubmit": "Cette déclaration doit être soumise maintenant"
-      },
-      "submitted": {
-        "title": "Déclaration soumise",
-        "emailSent": "Email envoyé"
-      }
-    },
     "footer": {
-      "tagManualDeclarationButtonLabel": "Marquer comme soumis manuellement",
-      "createDeclarationButtonLabel": "Créer une déclaration"
-    }
-  },
-  "auth": {
-    "pendingLabel": "Authentification en cours..."
-  },
-  "settings": {
-    "title": "Paramètres.",
-    "save": {
-      "success": {
-        "title": "Succès",
-        "description": "Paramètres enregistrés avec succès."
+      "createDeclarationButtonLabel": "Créer une déclaration",
+      "tagManualDeclarationButtonLabel": "Marquer comme soumis manuellement"
+    },
+    "monthPicker": {
+      "submitted": {
+        "emailSent": "Email envoyé",
+        "title": "Déclaration soumise"
+      },
+      "tooltips": {
+        "lastCallToSubmit": "Cette déclaration doit être soumise maintenant",
+        "manuallySubmitted": "Cette déclaration a été soumise manuellement",
+        "timeToSubmit": "Cette déclaration peut maintenant être soumise"
       }
     },
-    "form": {
-      "labels": {
-        "firstName": "Prénom",
-        "lastName": "Nom",
-        "street": "Rue",
-        "number": "Numéro",
-        "postalCode": "Code postal",
-        "locality": "Localité",
-        "niss": "NISS",
-        "language": "Langue"
-      }
-    }
+    "title": "Mes déclarations."
   },
   "declaration": {
+    "create": {
+      "payment": "Paiement",
+      "rate": "Taux",
+      "reimbursement": "Remboursement",
+      "stock": "Stock",
+      "taxAmount": "Montant de la taxe (EUR)",
+      "taxBasis": "Base imposable (EUR)",
+      "title": "Remplissez votre déclaration.",
+      "type": "Type"
+    },
+    "pay": {
+      "qrcodeHint": "Scannez ce QR Code avec votre application bancaire.",
+      "qrcodePayload": "BCD\n001\n1\nSCT\nPCHQBEBB\nCentre de perception - Taxes diverses\nBE39679200229319\nEUR{{amount}}\n\nTOB - {{niss}} - {{name}} - {{period}}",
+      "title": "Payez votre TOB."
+    },
     "send": {
-      "title": "Envoyer à l'administration.",
       "email": {
         "recipientLabel": "Destinataire : ",
         "subjectLabel": "Objet :"
       },
       "footer": {
+        "sendButtonLabel": "Envoyer",
         "submitButtonLabel": "Enregistrer et soumettre",
         "submitWarning": {
-          "title": "Attention",
-          "description": "Un email sera envoyé à l'administration depuis votre compte Gmail. Après avoir soumis la déclaration, veuillez vérifier votre boîte d'envoi Gmail pour confirmer qu'elle a bien été envoyée. Si ce n'est pas le cas, veuillez soumettre la déclaration manuellement."
-        },
-        "sendButtonLabel": "Envoyer"
-      }
+          "description": "Un email sera envoyé à l'administration depuis votre compte Gmail. Après avoir soumis la déclaration, veuillez vérifier votre boîte d'envoi Gmail pour confirmer qu'elle a bien été envoyée. Si ce n'est pas le cas, veuillez soumettre la déclaration manuellement.",
+          "title": "Attention"
+        }
+      },
+      "title": "Envoyer à l'administration."
     },
     "sign": {
-      "title": "Vérifiez votre déclaration.",
       "modal": {
-        "title": "Signez votre déclaration ici.",
-        "signButtonLabel": "Signer"
+        "signButtonLabel": "Signer",
+        "title": "Signez votre déclaration ici."
       },
       "pay": {
         "buttonLabel": "Payer",
         "warning": {
-          "title": "Veuillez vérifier",
-          "description": "Veuillez examiner toutes les informations attentivement avant de procéder. toby ne peut être tenu responsable de toute erreur dans votre déclaration."
+          "description": "Veuillez examiner toutes les informations attentivement avant de procéder. toby ne peut être tenu responsable de toute erreur dans votre déclaration.",
+          "title": "Veuillez vérifier"
         }
-      }
-    },
-    "pay": {
-      "title": "Payez votre TOB.",
-      "qrcodePayload": "BCD\n001\n1\nSCT\nPCHQBEBB\nCentre de perception - Taxes diverses\nBE39679200229319\nEUR{{amount}}\n\nTOB/{{niss}} - {{name}} - {{period}}",
-      "qrcodeHint": "Scannez ce QR Code avec votre application bancaire."
+      },
+      "title": "Vérifiez votre déclaration."
     },
     "submit": {
       "email": {
+        "filename": "{{lastname}}_{{firstname}}_TOB_{{period}}.pdf",
         "message": "Madame, Monsieur,\n\nVeuillez trouver ci-joint la déclaration TOB pour {{period}}.\n\nCordialement,\n\n{{name}}",
-        "subject": "Déclaration TOB pour {{period}}",
-        "filename": "{{lastname}}_{{firstname}}_TOB_{{period}}.pdf"
+        "subject": "Déclaration TOB pour {{period}}"
+      }
+    }
+  },
+  "header": {
+    "links": {
+      "faq": "FAQ",
+      "logout": "Déconnexion",
+      "settings": "Paramètres"
+    }
+  },
+  "landing": {
+    "hero": "Soumettez votre déclaration TOB\n en quelques clics.",
+    "infoDialog": {
+      "ctaLabel": "C'est parti",
+      "description": "Vous serez redirigé vers Google pour accorder à Toby l'accès à votre Google Drive et votre compte Gmail.",
+      "drive": {
+        "descripton": "Toutes vos données Toby sont stockées dans un dossier dédié sur votre compte Google Drive, et Toby n'aura accès qu'à ces fichiers. Cela garantit que vos données personnelles restent sécurisées et ne sont accessibles que par vous.",
+        "title": "Google Drive",
+        "titleSuffix": "(requis)"
+      },
+      "gmail": {
+        "descripton": "En accordant à Toby l'accès à votre compte Gmail, vous pourrez envoyer votre déclaration à l'administration d'un simple clic. Toby n'a pas accès à votre boîte de réception. Si cela vous met mal à l'aise, n'hésitez pas à créer un compte Gmail dédié pour gérer vos déclarations.",
+        "title": "Gmail",
+        "titleSuffix": "(recommandé)"
+      },
+      "title": "Connectez votre compte Google"
+    }
+  },
+  "settings": {
+    "form": {
+      "labels": {
+        "firstName": "Prénom",
+        "language": "Langue",
+        "lastName": "Nom",
+        "locality": "Localité",
+        "niss": "NISS",
+        "number": "Numéro",
+        "postalCode": "Code postal",
+        "street": "Rue"
       }
     },
-    "create": {
-      "title": "Remplissez votre déclaration.",
-      "stock": "Stock",
-      "type": "Type",
-      "rate": "Taux",
-      "taxBasis": "Base imposable (EUR)",
-      "taxAmount": "Montant de la taxe (EUR)",
-      "payment": "Paiement",
-      "reimbursement": "Remboursement"
-    }
+    "save": {
+      "success": {
+        "description": "Paramètres enregistrés avec succès.",
+        "title": "Succès"
+      }
+    },
+    "title": "Paramètres."
   }
 }

@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
 import { Page } from "../components/Page";
+import { useLandingInfoDialog } from "./components/useLandingInfoDialog";
 
 export const Landing = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const { onLandingNextButtonPressed, dialog } = useLandingInfoDialog();
 
   return (
     <Page>
@@ -14,10 +14,11 @@ export const Landing = () => {
         <h2 className="text-6xl font-extrabold leading-none text-center">
           {t("landing.hero")}
         </h2>
-        <Button size="lg" onClick={() => navigate("/app/auth")}>
+        <Button size="lg" onClick={onLandingNextButtonPressed}>
           {t("common.letsDoIt")}
         </Button>
       </div>
+      {dialog}
     </Page>
   );
 };

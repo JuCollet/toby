@@ -1,123 +1,143 @@
 {
-  "common": {
-    "download": "Download",
-    "start": "Start",
-    "letsDoIt": "Let's do it !",
-    "periods_two": "{{first}} and {{second}}",
-    "back": "Back",
-    "next": "Next",
-    "save": "Save",
-    "clear": "Clear",
-    "cancel": "Cancel",
-    "continue": "Continue",
-    "sign": "Sign",
-    "french": "French",
-    "dutch": "Dutch",
-    "english": "English"
-  },
-  "header": {
-    "links": {
-      "settings": "Settings",
-      "faq": "FAQ",
-      "logout": "Logout"
+  "auth": {
+    "pendingLabel": "Authenticating...",
+    "permissionErrorDialog": {
+      "description": "Toby requires access to your Google Drive to function properly. This access is used to store your data and generate your declaration file. Toby can only access files it creates on your Google Drive and cannot view or modify any other content. If you'd like to proceed, please try again and grant the required permissions.",
+      "title": "Google Drive Access Required"
     }
   },
-  "landing": {
-    "hero": "Submit your TST declaration\nin minutes."
+  "common": {
+    "back": "Back",
+    "cancel": "Cancel",
+    "clear": "Clear",
+    "continue": "Continue",
+    "download": "Download",
+    "dutch": "Dutch",
+    "english": "English",
+    "french": "French",
+    "letsDoIt": "Let's do it !",
+    "next": "Next",
+    "ok": "Ok",
+    "periods_two": "{{first}} and {{second}}",
+    "save": "Save",
+    "sign": "Sign",
+    "start": "Start"
   },
   "dashboard": {
-    "title": "My declarations.",
-    "monthPicker": {
-      "tooltips": {
-        "manuallySubmitted": "This declaration has been manually submitted",
-        "timeToSubmit": "This declaration could now be submitted",
-        "lastCallToSubmit": "This declaration should be submitted now"
-      },
-      "submitted": {
-        "title": "Submitted declaration",
-        "emailSent": "Email sent"
-      }
-    },
     "footer": {
-      "tagManualDeclarationButtonLabel": "Mark as manually submitted",
-      "createDeclarationButtonLabel": "Create declaration"
-    }
-  },
-  "auth": {
-    "pendingLabel": "Authenticating..."
-  },
-  "settings": {
-    "title": "Settings.",
-    "save": {
-      "success": {
-        "title": "Success",
-        "description": "Settings successfully saved."
+      "createDeclarationButtonLabel": "Create declaration",
+      "tagManualDeclarationButtonLabel": "Mark as manually submitted"
+    },
+    "monthPicker": {
+      "submitted": {
+        "emailSent": "Email sent",
+        "title": "Submitted declaration"
+      },
+      "tooltips": {
+        "lastCallToSubmit": "This declaration should be submitted now",
+        "manuallySubmitted": "This declaration has been manually submitted",
+        "timeToSubmit": "This declaration could now be submitted"
       }
     },
-    "form": {
-      "labels": {
-        "firstName": "Firstname",
-        "lastName": "Lastname",
-        "street": "Street",
-        "number": "Number",
-        "postalCode": "Postal Code",
-        "locality": "Locality",
-        "niss": "NISS",
-        "language": "Language"
-      }
-    }
+    "title": "My declarations."
   },
   "declaration": {
+    "create": {
+      "payment": "Payment",
+      "rate": "Rate",
+      "reimbursement": "Reimbursement",
+      "stock": "Stock",
+      "taxAmount": "Tax amount (EUR)",
+      "taxBasis": "Tax basis (EUR)",
+      "title": "Fill in your declaration.",
+      "type": "Type"
+    },
+    "pay": {
+      "qrcodeHint": "Scan this QR Code with your banking application.",
+      "qrcodePayload": "BCD\n001\n1\nSCT\nPCHQBEBB\nCentre de perception - Taxes diverses\nBE39679200229319\nEUR{{amount}}\n\nTOB - {{niss}} - {{name}} - {{period}}",
+      "title": "Pay your TST."
+    },
     "send": {
-      "title": "Send to administration.",
       "email": {
         "recipientLabel": "Recipient : ",
         "subjectLabel": "Object :"
       },
       "footer": {
+        "sendButtonLabel": "Send",
         "submitButtonLabel": "Save and submit",
         "submitWarning": {
-          "title": "Warning",
-          "description": "An email will be sent to the administration using your Gmail account. After submitting the declaration, please check your Gmail outbox to confirm it was successfully sent. If it wasn’t, please submit the declaration manually."
-        },
-        "sendButtonLabel": "Send"
-      }
+          "description": "An email will be sent to the administration using your Gmail account. After submitting the declaration, please check your Gmail outbox to confirm it was successfully sent. If it wasn’t, please submit the declaration manually.",
+          "title": "Warning"
+        }
+      },
+      "title": "Send to administration."
     },
     "sign": {
-      "title": "Check your declaration.",
       "modal": {
-        "title": "Sign your declaration here.",
-        "signButtonLabel": "Sign"
+        "signButtonLabel": "Sign",
+        "title": "Sign your declaration here."
       },
       "pay": {
         "buttonLabel": "Pay",
         "warning": {
-          "title": "Please review",
-          "description": "Please review all information carefully before proceeding. toby cannot be held responsible for any errors in your declaration."
+          "description": "Please review all information carefully before proceeding. toby cannot be held responsible for any errors in your declaration.",
+          "title": "Please review"
         }
-      }
-    },
-    "pay": {
-      "title": "Pay your TST.",
-      "qrcodePayload": "BCD\n001\n1\nSCT\nPCHQBEBB\nCentre de perception - Taxes diverses\nBE39679200229319\nEUR{{amount}}\n\nTOB/{{niss}} - {{name}} - {{period}}",
-      "qrcodeHint": "Scan this QR Code with your banking application."
+      },
+      "title": "Check your declaration."
     },
     "submit": {
       "email": {
+        "filename": "{{lastname}}_{{firstname}}_TOB_{{period}}.pdf",
         "message": "Dear Sir/Madam,\n\nPlease find attached the TST declaration for {{period}}.\n\nKind regards,\n\n{{name}}",
-        "subject": "TST declaration for {{period}}",
-        "filename": "{{lastname}}_{{firstname}}_TOB_{{period}}.pdf"
+        "subject": "TST declaration for {{period}}"
+      }
+    }
+  },
+  "header": {
+    "links": {
+      "faq": "FAQ",
+      "logout": "Logout",
+      "settings": "Settings"
+    }
+  },
+  "landing": {
+    "hero": "Submit your TST declaration\nin minutes.",
+    "infoDialog": {
+      "ctaLabel": "Let's go",
+      "description": "You'll be redirected to Google to grant Toby access to your Google Drive and Gmail accounts.",
+      "drive": {
+        "descripton": "All your Toby data is stored in a dedicated folder in your Google Drive account, and Toby will only have access to those files. This ensures that your personal data remains safe and is only accessible by you.",
+        "title": "Google Drive",
+        "titleSuffix": "(required)"
+      },
+      "gmail": {
+        "descripton": "By granting Toby access to your Gmail account, you'll be able to send your declaration to the administration with a single click. Toby cannot access your mailbox. If this makes you uncomfortable, feel free to create a dedicated Gmail account to manage your declarations.",
+        "title": "Gmail",
+        "titleSuffix": "(recommended)"
+      },
+      "title": "Connect your Google account"
+    }
+  },
+  "settings": {
+    "form": {
+      "labels": {
+        "firstName": "Firstname",
+        "language": "Language",
+        "lastName": "Lastname",
+        "locality": "Locality",
+        "niss": "NISS",
+        "number": "Number",
+        "postalCode": "Postal Code",
+        "street": "Street"
       }
     },
-    "create": {
-      "title": "Fill in your declaration.",
-      "stock": "Stock",
-      "type": "Type",
-      "rate": "Rate",
-      "taxBasis": "Tax basis (EUR)",
-      "taxAmount": "Tax amount (EUR)",
-      "payment": "Payment",
-      "reimbursement": "Reimbursement"
-    }
+    "save": {
+      "success": {
+        "description": "Settings successfully saved.",
+        "title": "Success"
+      }
+    },
+    "title": "Settings."
   }
 }
