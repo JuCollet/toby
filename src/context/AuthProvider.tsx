@@ -20,7 +20,7 @@ const CLIENT_ID =
   "225359803890-f8gilsqcm8hso5ja7piovdm9qmpm94lb.apps.googleusercontent.com";
 const REDIRECT_URI =
   import.meta.env.MODE === "production"
-    ? "https://matob.be/app/auth"
+    ? "https://mytoby.be/app/auth"
     : "http://localhost:5173/app/auth";
 const STATE_STORAGE_KEY = "state";
 const CODE_VERIFIER_STORAGE_KEY = "cv";
