@@ -60,7 +60,10 @@
     "send": {
       "email": {
         "recipientLabel": "Ontvanger: ",
-        "subjectLabel": "Onderwerp:"
+        "subjectLabel": "Onderwerp:",
+        "clipboard": {
+          "buttonLabel": "Kopiëren naar klembord"
+        }
       },
       "footer": {
         "sendButtonLabel": "Verzenden",

@@ -60,7 +60,10 @@
     "send": {
       "email": {
         "recipientLabel": "Destinataire : ",
-        "subjectLabel": "Objet :"
+        "subjectLabel": "Objet :",
+        "clipboard": {
+          "buttonLabel": "Copier dans le presse-papier"
+        }
       },
       "footer": {
         "sendButtonLabel": "Envoyer",
