@@ -80,7 +80,7 @@
       "pay": {
         "buttonLabel": "Payer",
         "warning": {
-          "description": "Veuillez examiner toutes les informations attentivement avant de procéder. toby ne peut être tenu responsable de toute erreur dans votre déclaration.",
+          "description": "Veuillez examiner toutes les informations attentivement avant de procéder. Toby ne peut être tenu responsable de toute erreur dans votre déclaration.",
           "title": "Veuillez vérifier"
         }
       },
@@ -112,7 +112,7 @@
         "titleSuffix": "(requis)"
       },
       "gmail": {
-        "descripton": "En accordant à Toby l'accès à votre compte Gmail, vous pourrez envoyer votre déclaration à l'administration d'un simple clic. Toby n'a pas accès à votre boîte de réception. Si cela vous met mal à l'aise, n'hésitez pas à créer un compte Gmail dédié pour gérer vos déclarations.",
+        "descripton": "En accordant à Toby l'accès à votre compte Gmail, vous pourrez envoyer votre déclaration à l'administration d'un simple clic. Toby n'a pas accès à votre boîte de réception.",
         "title": "Gmail",
         "titleSuffix": "(recommandé)"
       },

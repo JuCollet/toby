@@ -80,7 +80,7 @@
       "pay": {
         "buttonLabel": "Betalen",
         "warning": {
-          "description": "Controleer alle informatie zorgvuldig voordat u verdergaat. toby kan niet verantwoordelijk worden gehouden voor fouten in uw aangifte.",
+          "description": "Controleer alle informatie zorgvuldig voordat u verdergaat. Toby kan niet verantwoordelijk worden gehouden voor fouten in uw aangifte.",
           "title": "Controleer alstublieft"
         }
       },
@@ -112,7 +112,7 @@
         "titleSuffix": "(vereist)"
       },
       "gmail": {
-        "descripton": "Door Toby toegang te geven tot uw Gmail-account, kunt u uw aangifte met één klik naar de administratie verzenden. Toby heeft geen toegang tot uw mailbox. Als u zich hier ongemakkelijk bij voelt, kunt u een apart Gmail-account aanmaken om uw aangiften te beheren.",
+        "descripton": "Door Toby toegang te geven tot uw Gmail-account, kunt u uw aangifte met één klik naar de administratie verzenden. Toby heeft geen toegang tot uw mailbox.",
         "title": "Gmail",
         "titleSuffix": "(aanbevolen)"
       },

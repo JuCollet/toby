@@ -11,13 +11,14 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
+import { AuthContext } from "@/context/AuthProvider";
 import {
   useGoogleDriveConfigFile,
   useGoogleDriveDataFile,
 } from "@/services/query/useGoogleDrive";
 import { useSendEmail } from "@/services/query/useSendEmail";
 import { useStoreGoogleDriveAppFile } from "@/services/query/useStoreGoogleDriveAppFile";
-import { File, Save, Send } from "lucide-react";
+import { Copy, File, Save, Send } from "lucide-react";
 import { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
@@ -26,6 +27,7 @@ import { DeclarationContext } from "./Declaration";
 
 export const DeclarationSubmit = () => {
   const { t } = useTranslation();
+  const { permissions } = useContext(AuthContext);
   const { data: userSettings } = useGoogleDriveConfigFile();
   const { data: userData } = useGoogleDriveDataFile();
   const navigate = useNavigate();
@@ -42,6 +44,8 @@ export const DeclarationSubmit = () => {
     fileName: "data",
     onSuccess: () => navigate("/app/dashboard"),
   });
+
+  const canSendEmail = permissions?.includes("gmail");
 
   const onSubmit = ({
     enableEmailSend = true,
@@ -87,39 +91,52 @@ export const DeclarationSubmit = () => {
           >
             {t("common.back")}
           </Button>
+          {!canSendEmail && (
+            <Button
+              size="lg"
+              className="flex flex-row items-center gap-2"
+              onClick={() => navigator.clipboard.writeText(message)}
+              variant="secondary"
+            >
+              <Copy size="1rem" />
+              {t("declaration.send.clipboard.buttonLabel")}
+            </Button>
+          )}
           <Button
             size="lg"
             className="flex flex-row items-center gap-2"
             onClick={() => onSubmit({ enableEmailSend: false })}
-            variant="secondary"
+            variant={canSendEmail ? "secondary" : undefined}
           >
             <Save size="1rem" />
             {t("common.save")}
           </Button>
-          <AlertDialog>
-            <AlertDialogTrigger>
-              <Button size="lg" className="flex flex-row items-center gap-2">
-                <Send size="1rem" />
-                {t("declaration.send.footer.submitButtonLabel")}
-              </Button>
-            </AlertDialogTrigger>
-            <AlertDialogContent>
-              <AlertDialogHeader>
-                <AlertDialogTitle>
-                  {t("declaration.send.footer.submitWarning.title")}
-                </AlertDialogTitle>
-                <AlertDialogDescription>
-                  {t("declaration.send.footer.submitWarning.description")}
-                </AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter>
-                <AlertDialogCancel>{t("common.cancel")}</AlertDialogCancel>
-                <AlertDialogAction onClick={() => onSubmit()}>
-                  {t("declaration.send.footer.sendButtonLabel")}
-                </AlertDialogAction>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
+          {canSendEmail && (
+            <AlertDialog>
+              <AlertDialogTrigger>
+                <Button size="lg" className="flex flex-row items-center gap-2">
+                  <Send size="1rem" />
+                  {t("declaration.send.footer.submitButtonLabel")}
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>
+                    {t("declaration.send.footer.submitWarning.title")}
+                  </AlertDialogTitle>
+                  <AlertDialogDescription>
+                    {t("declaration.send.footer.submitWarning.description")}
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>{t("common.cancel")}</AlertDialogCancel>
+                  <AlertDialogAction onClick={() => onSubmit()}>
+                    {t("declaration.send.footer.sendButtonLabel")}
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          )}
         </div>
       }
     >

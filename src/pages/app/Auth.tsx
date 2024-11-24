@@ -34,7 +34,7 @@ export const Auth = () => {
     return <AuthPermissionErrorDialog />;
   }
 
-  if (data === null && !isLoading) {
+  if (data == null && !isLoading) {
     return <Navigate to="/app/settings" state={{ init: true }} replace />;
   }
 

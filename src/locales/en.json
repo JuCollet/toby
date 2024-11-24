@@ -70,7 +70,10 @@
           "title": "Warning"
         }
       },
-      "title": "Send to administration."
+      "title": "Send to administration.",
+      "clipboard": {
+        "buttonLabel": "Copy to clipboard"
+      }
     },
     "sign": {
       "modal": {
@@ -80,7 +83,7 @@
       "pay": {
         "buttonLabel": "Pay",
         "warning": {
-          "description": "Please review all information carefully before proceeding. toby cannot be held responsible for any errors in your declaration.",
+          "description": "Please review all information carefully before proceeding. Toby cannot be held responsible for any errors in your declaration.",
           "title": "Please review"
         }
       },
@@ -112,7 +115,7 @@
         "titleSuffix": "(required)"
       },
       "gmail": {
-        "descripton": "By granting Toby access to your Gmail account, you'll be able to send your declaration to the administration with a single click. Toby cannot access your mailbox. If this makes you uncomfortable, feel free to create a dedicated Gmail account to manage your declarations.",
+        "descripton": "By granting Toby access to your Gmail account, you'll be able to send your declaration to the administration with a single click. Toby cannot access your mailbox.",
         "title": "Gmail",
         "titleSuffix": "(recommended)"
       },
