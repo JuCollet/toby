@@ -11,7 +11,7 @@ export const Landing = () => {
   return (
     <Page>
       <div className="flex flex-col flex-1 items-center justify-center gap-8">
-        <h2 className="text-6xl font-extrabold leading-none text-center">
+        <h2 className="text-4xl md:text-6xl font-extrabold leading-none text-center">
           {t("landing.hero")}
         </h2>
         <Button size="lg" onClick={onLandingNextButtonPressed}>

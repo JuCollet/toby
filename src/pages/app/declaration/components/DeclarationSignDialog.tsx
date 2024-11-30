@@ -29,7 +29,7 @@ export const DeclarationSignDialog = ({ open, onOpenChange }: Props) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="w-full h-full sm:max-w-[425px] sm:h-auto">
         <DialogHeader>
           <DialogTitle>{t("declaration.sign.modal.title")}</DialogTitle>
         </DialogHeader>
@@ -44,25 +44,29 @@ export const DeclarationSignDialog = ({ open, onOpenChange }: Props) => {
           />
         </div>
         <DialogFooter>
-          <Button
-            type="submit"
-            variant="outline"
-            onClick={() => canvasRef.current?.resetCanvas()}
-          >
-            {t("common.clear")}
-          </Button>
-          <Button
-            type="submit"
-            onClick={async () => {
-              const b64Signature = await canvasRef.current?.exportImage("png");
-              if (b64Signature) {
-                setSignature({ b64Signature });
-              }
-              onOpenChange(false);
-            }}
-          >
-            {t("declaration.sign.modal.signButtonLabel")}
-          </Button>
+          <div className="flex gap-4">
+            <Button
+              type="submit"
+              variant="outline"
+              onClick={() => canvasRef.current?.resetCanvas()}
+            >
+              {t("common.clear")}
+            </Button>
+            <Button
+              className="w-full md:w-auto"
+              type="submit"
+              onClick={async () => {
+                const b64Signature =
+                  await canvasRef.current?.exportImage("png");
+                if (b64Signature) {
+                  setSignature({ b64Signature });
+                }
+                onOpenChange(false);
+              }}
+            >
+              {t("declaration.sign.modal.signButtonLabel")}
+            </Button>
+          </div>
         </DialogFooter>
       </DialogContent>
     </Dialog>

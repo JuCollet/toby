@@ -52,7 +52,7 @@ export const Dashboard = () => {
       header={<AppHeader />}
       footer={
         <div className="flex flex-1 flex-row justify-end">
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-1 flex-row gap-4 justify-end">
             <Button
               size="lg"
               onClick={() => {
@@ -68,6 +68,7 @@ export const Dashboard = () => {
                 selectedPeriods.length > 1
               }
               variant="secondary"
+              className="hidden md:block"
             >
               {t("dashboard.footer.tagManualDeclarationButtonLabel")}
             </Button>
@@ -79,6 +80,7 @@ export const Dashboard = () => {
                 })
               }
               disabled={!selectedPeriods || !selectedPeriods.length}
+              className="w-full md:w-auto"
             >
               {t("dashboard.footer.createDeclarationButtonLabel")}
             </Button>

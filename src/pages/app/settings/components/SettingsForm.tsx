@@ -116,7 +116,7 @@ export const SettingsForm = ({
         <form
           id="settings"
           onSubmit={form.handleSubmit(_onSubmit)}
-          className="flex-1 space-y-8 columns-2"
+          className="flex-1 space-y-4 md:space-y-8 md:columns-2 lg:columns-3"
         >
           {fields.map(({ name, label, placeholder }) => (
             <FormField

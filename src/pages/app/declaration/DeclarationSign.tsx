@@ -59,8 +59,8 @@ export const DeclarationSign = () => {
           </Button>
           {b64Signature ? (
             <AlertDialog>
-              <AlertDialogTrigger>
-                <Button size="lg">
+              <AlertDialogTrigger asChild>
+                <Button size="lg" className="w-full md:w-auto">
                   {t("declaration.sign.pay.buttonLabel")}
                 </Button>
               </AlertDialogTrigger>
@@ -84,7 +84,11 @@ export const DeclarationSign = () => {
               </AlertDialogContent>
             </AlertDialog>
           ) : (
-            <Button size="lg" onClick={() => setIsSignOpen(true)}>
+            <Button
+              size="lg"
+              onClick={() => setIsSignOpen(true)}
+              className="w-full md:w-auto"
+            >
               {t("common.sign")}
             </Button>
           )}

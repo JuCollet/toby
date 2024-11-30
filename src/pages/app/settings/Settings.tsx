@@ -46,7 +46,7 @@ export const Settings = () => {
               type="submit"
               form="settings"
               disabled={isSaving}
-              className="gap-2"
+              className="gap-2 w-full md:w-auto"
             >
               {isSaving && <Loader2 size="1rem" className="animate-spin" />}
               {t("common.save")}

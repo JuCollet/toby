@@ -275,13 +275,13 @@ export const generatePdf = async ({
       page: pages[0],
       value: `${data.street} ${data.streetNo}`,
       x: 302,
-      y: 632,
+      y: 620.5,
     },
     {
       page: pages[0],
       value: `${data.zipCode} ${data.locality}`,
       x: 302,
-      y: 620.5,
+      y: 608,
     },
     ...getSplittedLargeValuePositions({
       page: pages[0],

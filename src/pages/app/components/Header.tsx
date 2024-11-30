@@ -35,7 +35,7 @@ export const AppHeader = () => {
         <DropdownMenuGroup>
           <DropdownMenuItem onClick={onSettingsButtonClick}>
             <UserRoundCog />
-            <span>{t("header.links.settings")}</span>
+            <span>{t("header.links.profile")}</span>
           </DropdownMenuItem>
           {/* <DropdownMenuItem onClick={onSettingsButtonClick}>
             <CircleHelp />
@@ -45,8 +45,8 @@ export const AppHeader = () => {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem onClick={onLogoutButtonClick}>
-            <LogOut />
-            <span>{t("header.links.logout")}</span>
+            <LogOut className="text-red-600" />
+            <span className="text-red-600">{t("header.links.logout")}</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

@@ -255,7 +255,7 @@ export const DashboardMonthPicker = ({
                     <Tooltip>
                       <TooltipTrigger>
                         <Popover>
-                          <PopoverTrigger className="w-full">
+                          <PopoverTrigger className="w-full" asChild>
                             <div
                               className={clsx(
                                 "flex items-center justify-center w-full h-8 rounded-3xl border text-center text-xs transition-all",

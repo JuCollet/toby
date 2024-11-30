@@ -43,7 +43,11 @@ export const DeclarationPay = () => {
           >
             {t("common.back")}
           </Button>
-          <Button size="lg" onClick={() => navigate("/app/declaration/submit")}>
+          <Button
+            size="lg"
+            onClick={() => navigate("/app/declaration/submit")}
+            className="w-full md:w-auto"
+          >
             {t("common.next")}
           </Button>
         </div>

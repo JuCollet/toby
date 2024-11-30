@@ -28,6 +28,7 @@ export const DeclarationCreate = () => {
             size="lg"
             onClick={() => navigate("/app/declaration/sign")}
             disabled={declarationRows.length === 0}
+            className="w-full md:w-auto"
           >
             {t("common.next")}
           </Button>
