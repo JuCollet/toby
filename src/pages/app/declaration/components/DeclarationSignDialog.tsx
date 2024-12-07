@@ -6,6 +6,13 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { TabletSmartphoneIcon } from "lucide-react";
 import { useContext, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { ReactSketchCanvas, ReactSketchCanvasRef } from "react-sketch-canvas";
@@ -52,6 +59,24 @@ export const DeclarationSignDialog = ({ open, onOpenChange }: Props) => {
             >
               {t("common.clear")}
             </Button>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Button
+                    type="submit"
+                    variant="outline"
+                    disabled
+                    className="flex gap-2"
+                  >
+                    <TabletSmartphoneIcon size="1rem" />
+                    {t("declaration.sign.modal.remoteSignButtonLabel")}
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{t("common.soon")}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
             <Button
               className="w-full md:w-auto"
               type="submit"

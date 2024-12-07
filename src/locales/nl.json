@@ -21,7 +21,8 @@
     "periods_two": "{{first}} en {{second}}",
     "save": "Opslaan",
     "sign": "Ondertekenen",
-    "start": "Starten"
+    "start": "Starten",
+    "soon": "Binnenkort"
   },
   "dashboard": {
     "footer": {
@@ -78,6 +79,7 @@
     "sign": {
       "modal": {
         "signButtonLabel": "Ondertekenen",
+        "remoteSignButtonLabel": "Op afstand tekenen",
         "title": "Onderteken uw aangifte hier."
       },
       "pay": {

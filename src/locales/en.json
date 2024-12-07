@@ -21,7 +21,8 @@
     "periods_two": "{{first}} and {{second}}",
     "save": "Save",
     "sign": "Sign",
-    "start": "Start"
+    "start": "Start",
+    "soon": "Soon"
   },
   "dashboard": {
     "footer": {
@@ -78,6 +79,7 @@
     "sign": {
       "modal": {
         "signButtonLabel": "Sign",
+        "remoteSignButtonLabel": "Sign remotely",
         "title": "Sign your declaration here."
       },
       "pay": {
