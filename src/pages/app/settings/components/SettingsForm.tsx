@@ -17,17 +17,64 @@ import { useToast } from "@/hooks/use-toast";
 import { useStoreGoogleDriveAppFile } from "@/services/query/useStoreGoogleDriveAppFile";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SelectValue } from "@radix-ui/react-select";
+import { TFunction } from "i18next";
 import { useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
+
+const getFormSchema = (t: TFunction) =>
+  z.object({
+    firstName: z
+      .string({
+        required_error: t("settings.form.errors.required"),
+      })
+      .min(2, t("settings.form.errors.invalidFirstname")),
+    lastName: z
+      .string({
+        required_error: t("settings.form.errors.required"),
+      })
+      .min(2, t("settings.form.errors.invalidLastname")),
+    street: z
+      .string({
+        required_error: t("settings.form.errors.required"),
+      })
+      .min(2, t("settings.form.errors.invalidStreetName")),
+    streetNo: z
+      .string({
+        required_error: t("settings.form.errors.required"),
+      })
+      .min(1, t("settings.form.errors.invalidStreetNumber")),
+    zipCode: z
+      .string({
+        required_error: t("settings.form.errors.required"),
+      })
+      .min(2, t("settings.form.errors.invalidPostalCode")),
+    locality: z
+      .string({
+        required_error: t("settings.form.errors.required"),
+      })
+      .min(2, t("settings.form.errors.invalidLocality")),
+    niss: z
+      .string({
+        required_error: t("settings.form.errors.required"),
+      })
+      .refine(
+        (value) =>
+          /^[0-9]{2}\.(0[1-9]|1[0-2])\.(0[1-9]|[1-2][0-9]|3[0-1])-[0-9]{3}\.[0-9]{2}$/.test(
+            value ?? "",
+          ),
+        t("settings.form.errors.invalidNiss"),
+      ),
+    language: z.string().optional(),
+  });
 
 export const SettingsForm = ({
   onSubmit,
   defaultValues,
   fileId,
 }: {
-  defaultValues: z.infer<typeof formSchema>;
+  defaultValues: z.infer<ReturnType<typeof getFormSchema>>;
   fileId?: string;
   onSubmit: ReturnType<typeof useStoreGoogleDriveAppFile>["mutateAsync"];
 }) => {
@@ -37,61 +84,14 @@ export const SettingsForm = ({
   } = useTranslation();
   const { toast } = useToast();
 
-  const formSchema = useMemo(
-    () =>
-      z.object({
-        firstName: z
-          .string({
-            required_error: t("settings.form.errors.required"),
-          })
-          .min(2, t("settings.form.errors.invalidFirstname")),
-        lastName: z
-          .string({
-            required_error: t("settings.form.errors.required"),
-          })
-          .min(2, t("settings.form.errors.invalidLastname")),
-        street: z
-          .string({
-            required_error: t("settings.form.errors.required"),
-          })
-          .min(2, t("settings.form.errors.invalidStreetName")),
-        streetNo: z
-          .string({
-            required_error: t("settings.form.errors.required"),
-          })
-          .min(1, t("settings.form.errors.invalidStreetNumber")),
-        zipCode: z
-          .string({
-            required_error: t("settings.form.errors.required"),
-          })
-          .min(2, t("settings.form.errors.invalidPostalCode")),
-        locality: z
-          .string({
-            required_error: t("settings.form.errors.required"),
-          })
-          .min(2, t("settings.form.errors.invalidLocality")),
-        niss: z
-          .string({
-            required_error: t("settings.form.errors.required"),
-          })
-          .refine(
-            (value) =>
-              /^[0-9]{2}\.(0[1-9]|1[0-2])\.(0[1-9]|[1-2][0-9]|3[0-1])-[0-9]{3}\.[0-9]{2}$/.test(
-                value ?? "",
-              ),
-            t("settings.form.errors.invalidNiss"),
-          ),
-        language: z.string().optional(),
-      }),
-    [t],
-  );
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<ReturnType<typeof getFormSchema>>>({
+    resolver: zodResolver(getFormSchema(t)),
     defaultValues,
   });
 
-  const _onSubmit = async (values: z.infer<typeof formSchema>) => {
+  const _onSubmit = async (
+    values: z.infer<ReturnType<typeof getFormSchema>>,
+  ) => {
     await onSubmit({ data: JSON.stringify(values), fileId });
     toast({
       title: t("settings.save.success.title"),
@@ -103,7 +103,7 @@ export const SettingsForm = ({
 
   const fields = useMemo<
     {
-      name: keyof z.infer<typeof formSchema>;
+      name: keyof z.infer<ReturnType<typeof getFormSchema>>;
       label: string;
       placeholder: string;
     }[]
