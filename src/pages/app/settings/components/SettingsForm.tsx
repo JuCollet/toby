@@ -74,7 +74,7 @@ export const SettingsForm = ({
   defaultValues,
   fileId,
 }: {
-  defaultValues: z.infer<ReturnType<typeof getFormSchema>>;
+  defaultValues?: Partial<z.infer<ReturnType<typeof getFormSchema>>>;
   fileId?: string;
   onSubmit: ReturnType<typeof useStoreGoogleDriveAppFile>["mutateAsync"];
 }) => {
