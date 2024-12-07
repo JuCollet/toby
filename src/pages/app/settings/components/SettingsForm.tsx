@@ -127,7 +127,11 @@ export const SettingsForm = ({
                 <FormItem className="break-inside-avoid">
                   <FormLabel>{label}</FormLabel>
                   <FormControl>
-                    <Input placeholder={placeholder} {...field} />
+                    <Input
+                      placeholder={placeholder}
+                      {...field}
+                      className="text-base"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -148,7 +152,7 @@ export const SettingsForm = ({
                   defaultValue={field.value}
                 >
                   <FormControl>
-                    <SelectTrigger>
+                    <SelectTrigger className="text-base">
                       <SelectValue />
                     </SelectTrigger>
                   </FormControl>
