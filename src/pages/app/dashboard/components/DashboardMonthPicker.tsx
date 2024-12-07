@@ -20,7 +20,7 @@ import { useGoogleDriveConfigFile } from "@/services/query/useGoogleDrive";
 import { getPeriod } from "@/utils/date";
 import clsx from "clsx";
 import { saveAs } from "file-saver";
-import { Clock, Download, MailCheck } from "lucide-react";
+import { Clock, Download, MailCheck, MailMinusIcon } from "lucide-react";
 import { Dispatch, SetStateAction, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -304,9 +304,6 @@ export const DashboardMonthPicker = ({
                           {declaration && isAppSubmission(declaration) && (
                             <PopoverContent>
                               <div className="flex flex-col gap-2 p-2">
-                                <h4 className="text-sm font-bold">
-                                  {t("dashboard.monthPicker.submitted.title")}
-                                </h4>
                                 <div className="flex items-center gap-2">
                                   <Clock size="1rem" />
                                   <span className="text-sm">
@@ -317,14 +314,18 @@ export const DashboardMonthPicker = ({
                                 </div>
                                 {declaration && (
                                   <div className="flex items-center gap-2">
-                                    <MailCheck size="1rem" />
+                                    {declaration.isEmailSent ? (
+                                      <MailCheck size="1rem" />
+                                    ) : (
+                                      <MailMinusIcon size="1rem" />
+                                    )}
                                     <span className="text-sm">
                                       {declaration.isEmailSent
                                         ? t(
                                             "dashboard.monthPicker.submitted.emailSent",
                                           )
                                         : t(
-                                            "dashboard.monthPicker.submitted.emailSent",
+                                            "dashboard.monthPicker.submitted.emailNotSent",
                                           )}
                                     </span>
                                   </div>

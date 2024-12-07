@@ -31,8 +31,7 @@
     "monthPicker": {
       "submitted": {
         "emailSent": "E-mail verzonden",
-        "emailNotSent": "Geen E-mail verzonden",
-        "title": "Ingediende aangifte"
+        "emailNotSent": "Geen E-mail verzonden"
       },
       "tooltips": {
         "lastCallToSubmit": "Deze aangifte moet nu worden ingediend",

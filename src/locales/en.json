@@ -31,8 +31,7 @@
     "monthPicker": {
       "submitted": {
         "emailSent": "Email sent",
-        "emailNotSent": "No email sent",
-        "title": "Submitted declaration"
+        "emailNotSent": "No email sent"
       },
       "tooltips": {
         "lastCallToSubmit": "This declaration should be submitted now",
