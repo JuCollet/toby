@@ -31,6 +31,7 @@
     "monthPicker": {
       "submitted": {
         "emailSent": "Email sent",
+        "emailNotSent": "No email sent",
         "title": "Submitted declaration"
       },
       "tooltips": {

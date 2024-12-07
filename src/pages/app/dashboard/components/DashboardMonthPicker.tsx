@@ -319,9 +319,13 @@ export const DashboardMonthPicker = ({
                                   <div className="flex items-center gap-2">
                                     <MailCheck size="1rem" />
                                     <span className="text-sm">
-                                      {t(
-                                        "dashboard.monthPicker.submitted.emailSent",
-                                      )}
+                                      {declaration.isEmailSent
+                                        ? t(
+                                            "dashboard.monthPicker.submitted.emailSent",
+                                          )
+                                        : t(
+                                            "dashboard.monthPicker.submitted.emailSent",
+                                          )}
                                     </span>
                                   </div>
                                 )}
