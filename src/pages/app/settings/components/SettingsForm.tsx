@@ -22,17 +22,6 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
 
-const formSchema = z.object({
-  firstName: z.string().optional(),
-  lastName: z.string().optional(),
-  street: z.string().optional(),
-  streetNo: z.string().optional(),
-  zipCode: z.string().optional(),
-  locality: z.string().optional(),
-  niss: z.string().optional(),
-  language: z.string().optional(),
-});
-
 export const SettingsForm = ({
   onSubmit,
   defaultValues,
@@ -47,6 +36,55 @@ export const SettingsForm = ({
     i18n: { changeLanguage },
   } = useTranslation();
   const { toast } = useToast();
+
+  const formSchema = useMemo(
+    () =>
+      z.object({
+        firstName: z
+          .string({
+            required_error: t("settings.form.errors.required"),
+          })
+          .min(2, t("settings.form.errors.invalidFirstname")),
+        lastName: z
+          .string({
+            required_error: t("settings.form.errors.required"),
+          })
+          .min(2, t("settings.form.errors.invalidLastname")),
+        street: z
+          .string({
+            required_error: t("settings.form.errors.required"),
+          })
+          .min(2, t("settings.form.errors.invalidStreetName")),
+        streetNo: z
+          .string({
+            required_error: t("settings.form.errors.required"),
+          })
+          .min(1, t("settings.form.errors.invalidStreetNumber")),
+        zipCode: z
+          .string({
+            required_error: t("settings.form.errors.required"),
+          })
+          .min(2, t("settings.form.errors.invalidPostalCode")),
+        locality: z
+          .string({
+            required_error: t("settings.form.errors.required"),
+          })
+          .min(2, t("settings.form.errors.invalidLocality")),
+        niss: z
+          .string({
+            required_error: t("settings.form.errors.required"),
+          })
+          .refine(
+            (value) =>
+              /^[0-9]{2}\.(0[1-9]|1[0-2])\.(0[1-9]|[1-2][0-9]|3[0-1])-[0-9]{3}\.[0-9]{2}$/.test(
+                value ?? "",
+              ),
+            t("settings.form.errors.invalidNiss"),
+          ),
+        language: z.string().optional(),
+      }),
+    [t],
+  );
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -104,7 +142,7 @@ export const SettingsForm = ({
       {
         name: "niss",
         label: t("settings.form.labels.niss"),
-        placeholder: "80.01.01-213-10",
+        placeholder: "80.01.01-213.10",
       },
     ],
     [t],

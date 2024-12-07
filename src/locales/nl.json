@@ -135,6 +135,16 @@
         "number": "Nummer",
         "postalCode": "Postcode",
         "street": "Straat"
+      },
+      "errors": {
+        "invalidNiss": "Ongeldig formaat, moet overeenkomen met 00.00.00-000.00",
+        "invalidFirstname": "Ongeldige voornaam",
+        "invalidLastname": "Ongeldige achternaam",
+        "invalidStreetName": "Ongeldige straatnaam",
+        "invalidStreetNumber": "Ongeldig straatnummer",
+        "invalidPostalCode": "Ongeldige postcode",
+        "invalidLocality": "Ongeldige plaats",
+        "required": "Verplicht veld"
       }
     },
     "save": {

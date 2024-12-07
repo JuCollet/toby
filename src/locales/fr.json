@@ -135,6 +135,16 @@
         "number": "Numéro",
         "postalCode": "Code postal",
         "street": "Rue"
+      },
+      "errors": {
+        "invalidNiss": "Format invalide, doit correspondre à 00.00.00-000.00",
+        "invalidFirstname": "Prénom invalide",
+        "invalidLastname": "Nom invalide",
+        "invalidStreetName": "Nom de rue invalide",
+        "invalidStreetNumber": "Numéro de rue invalide",
+        "invalidPostalCode": "Code postal invalide",
+        "invalidLocality": "Localité invalide",
+        "required": "Champ requis"
       }
     },
     "save": {
