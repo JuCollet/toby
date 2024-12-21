@@ -108,8 +108,10 @@
   },
   "landing": {
     "hero": "Dien uw TST-aangifte\n binnen enkele minuten in.",
-    "links": {
-      "tcs": "Gebruiksvoorwaarden"
+    "footer": {
+      "links": {
+        "tcs": "Gebruiksvoorwaarden"
+      }
     },
     "infoDialog": {
       "ctaLabel": "Laten we gaan",
