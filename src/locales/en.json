@@ -108,6 +108,11 @@
   },
   "landing": {
     "hero": "Submit your TST declaration\nin minutes.",
+    "footer": {
+      "links": {
+        "tcs": "Terms and Conditions"
+      }
+    },
     "infoDialog": {
       "ctaLabel": "Let's go",
       "description": "You'll be redirected to Google to grant Toby access to your Google Drive and Gmail accounts.",

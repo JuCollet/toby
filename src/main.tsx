@@ -14,12 +14,22 @@ import { DeclarationSign } from "./pages/app/declaration/DeclarationSign.tsx";
 import { DeclarationSubmit } from "./pages/app/declaration/DeclarationSubmit.tsx";
 import { Error } from "./pages/app/Error.tsx";
 import { Settings } from "./pages/app/settings/Settings.tsx";
+import { Confidentiality } from "./pages/Confidentiality.tsx";
 import { Landing } from "./pages/Landing.tsx";
+import { Terms } from "./pages/Terms.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Landing />,
+  },
+  {
+    path: "/terms",
+    element: <Terms />,
+  },
+  {
+    path: "/confidentiality",
+    element: <Confidentiality />,
   },
   {
     path: "/app",
