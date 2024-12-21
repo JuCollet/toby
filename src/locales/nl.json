@@ -108,6 +108,9 @@
   },
   "landing": {
     "hero": "Dien uw TST-aangifte\n binnen enkele minuten in.",
+    "links": {
+      "tcs": "Gebruiksvoorwaarden"
+    },
     "infoDialog": {
       "ctaLabel": "Laten we gaan",
       "description": "U wordt doorgestuurd naar Google om Toby toegang te geven tot uw Google Drive- en Gmail-accounts.",

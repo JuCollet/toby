@@ -108,6 +108,11 @@
   },
   "landing": {
     "hero": "Soumettez votre déclaration TOB\n en quelques clics.",
+    "footer": {
+      "links": {
+        "tcs": "Conditions d'utilisation"
+      }
+    },
     "infoDialog": {
       "ctaLabel": "C'est parti",
       "description": "Vous serez redirigé vers Google pour accorder à Toby l'accès à votre Google Drive et votre compte Gmail.",
