@@ -13,16 +13,27 @@ export const Landing = () => {
   const { onLandingNextButtonPressed, dialog } = useLandingInfoDialog();
 
   const onTCSButtonClick = useCallback(() => navigate("/terms"), [navigate]);
+  const onConfidentialityButtonClick = useCallback(
+    () => navigate("/confidentiality"),
+    [navigate],
+  );
 
   return (
     <Page
       header={<LanguageSelect />}
       footer={
-        <>
+        <div className="flex-row">
           <Button variant="link" onClick={onTCSButtonClick} className="pl-0">
             {t("landing.footer.links.tcs")}
           </Button>
-        </>
+          <Button
+            variant="link"
+            onClick={onConfidentialityButtonClick}
+            className="pl-0"
+          >
+            {t("landing.footer.links.confidentiality")}
+          </Button>
+        </div>
       }
     >
       <div className="grid md:grid-cols-5">
