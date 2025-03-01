@@ -110,7 +110,8 @@
     "hero": "Dien uw TST-aangifte\n binnen enkele minuten in.",
     "footer": {
       "links": {
-        "tcs": "Gebruiksvoorwaarden"
+        "tcs": "Gebruiksvoorwaarden",
+        "confidentiality": "Vertrouwelijkheidsregels"
       }
     },
     "infoDialog": {

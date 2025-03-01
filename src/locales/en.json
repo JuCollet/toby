@@ -110,7 +110,8 @@
     "hero": "Submit your TST declaration\nin minutes.",
     "footer": {
       "links": {
-        "tcs": "Terms and Conditions"
+        "tcs": "Terms and Conditions",
+        "confidentiality": "Confidentiality Rules"
       }
     },
     "infoDialog": {

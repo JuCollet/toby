@@ -110,7 +110,8 @@
     "hero": "Soumettez votre déclaration TOB\n en quelques clics.",
     "footer": {
       "links": {
-        "tcs": "Conditions d'utilisation"
+        "tcs": "Conditions d'utilisation",
+        "confidentiality": "Règles de Confidentialité"
       }
     },
     "infoDialog": {
